@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
 }
+
 html {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
@@ -8,154 +9,428 @@ html {
   font-style: normal;
   font-size: 62.5%;
 }
+
 body {
   margin: 0;
   padding: 0;
 }
+
 header {
-  background-image: url('Image/Hero-section.png');
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: url("Image/Hero-section.png") no-repeat center / cover;
 }
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .navbar__brand {
   display: flex;
   align-items: center;
   padding: 1rem;
 }
+
 .navbar__nav {
   display: flex;
   align-items: center;
 }
 
+/* Gộp các title lớn */
+.hero-section__title,
+.extension__title,
+.customization__title,
+.pricing__title,
+.work-anywhere__title,
+.security__title,
+.sponsors__title,
+.integration-hero__title,
+.testimonials__title {
+  font-size: 6.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
 
+/* Gộp các description nhỏ */
+.hero-section__description,
+.feature__description,
+.extension__description,
+.customization__description,
+.pricing__subtitle,
+.security__description,
+.integration-hero__description,
+.work-anywhere__description {
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin-bottom: 3rem;
+}
+
+/* Gộp các button */
+button,
+.navbar__button,
+.feature__button,
+.extension__button,
+.customization__button,
+.pricing__button,
+.security__button,
+.work-anywhere__button,
+.integration-hero__button {
+  font-size: 1.8rem;
+  padding: 1rem 2rem;
+  background-color: #4f9cf9;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+/* Gộp các card name */
+.testimonial-card__name,
+.pricing__plan-name {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* Gộp các card role */
+.testimonial-card__role {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #666;
+}
+
+/* Gộp các list flex */
+.testimonials__list,
+.sponsors__list,
+.pricing .pricing__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Các phần riêng biệt giữ nguyên */
 @media (min-width: 1440px) {
   .container {
     max-width: 1400px;
     margin: 0 auto;
-     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    /* padding: 5rem 0; */
   }
+
+  .col-xl-6,
+  .col-xl-7,
+  .col-xl-5 {
+    flex: 0 0 auto;
+  }
+
   .col-xl-6 {
-    flex: 0 0 50%;
     max-width: 50%;
   }
+
   .col-xl-7 {
-    flex: 0 0 58.3333%;
     max-width: 58.3333%;
   }
-  .col-xl-5{
-    flex: 0 0 41.6667%;
+
+  .col-xl-5 {
     max-width: 41.6667%;
   }
-  .navbar__nav .navbar__nav--items {
-    gap: 2rem;
+  .col-xl-4 {
+    max-width: 33.3333%;
   }
-  .navbar__brand .navbar__brand-name {
+
+  .navbar__brand-name {
     font-size: 2.4rem;
     font-weight: bold;
     color: white;
     padding-left: 1rem;
   }
-  .navbar__nav .navbar__nav--items {
+
+  .navbar__nav--items {
+    display: flex;
+    gap: 2rem;
     font-size: 1.6rem;
     font-weight: 400;
     color: white;
     text-decoration: none;
     padding: 0.5rem 1rem;
   }
-  .navbar__actions .navbar__button {
-    font-size: 1.8rem;
-    padding: 1rem 2rem;
-    margin-left: 2rem;
-    border-radius: 0.5rem;
-    border: none;
-  }
-  .navbar__actions .navbar__button--login {
-    background-color: #ffe492;
+
+  .navbar__button--login {
+    background-color: #ffe492 !important;
     color: black;
+    margin: 0 1rem;
   }
-  .navbar__actions .navbar__button--cta {
+
+  .navbar__button--cta {
     background-color: #4f9cf9;
     color: white;
   }
+
   .hero-section {
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     color: white;
     padding: 5rem 0;
   }
-  .hero-section__content .hero-section__title {
-    font-size: 6.4rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-  }
-  .hero-section .hero-section__description {
-    font-size: 1.8rem;
-    font-weight: 300;
+
+  .hero-section__description {
     margin-bottom: 5rem;
   }
-  button {
-    font-size: 1.8rem;
-    padding: 1rem 2rem;
-    background-color: #4f9cf9;
-    color: white;
-    border: none;
-    border-radius: 0.5rem;
-  }
-    .hero-section__image img {
-        width: 100%;
-        height: auto;
-    }
-    .feature {
-        background-image: url('Image/Work-management.png');
-        background-repeat: no-repeat;
-        background-position: top;
-        background-size: contain;
-    }
- .feature__item {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5rem 0;
-    /* color: white; */
-  }
-  .feature__item .feature__title {
-    font-size: 7.2rem;
-    font-weight: 700;
-  }
-  .feature__title-highlight::after{
-    content: '';
-    display: block;
-    width: 100%;
-    height: 5rem;
-    background-image: url('Image/Vector.png');
-    
-    margin-top: -2.5rem;
-        background-repeat: no-repeat;
-  }
-  .feature__item .feature__description {
-    font-size: 1.8rem;
-    margin-top: -6rem;
-    font-weight: 300;
-    margin-bottom: 3rem;
-  }
-  .feature__item .feature__image img{
+
+  .hero-section__image img,
+  .feature__item .feature__image img,
+  .customization__image img {
     width: 100%;
     height: auto;
   }
-  .extension__info {
-   
+
+  .feature {
+    background: url("Image/Work-management.png") no-repeat top / contain;
   }
 
+  .feature__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5rem 0;
+  }
+
+  .feature__title {
+    font-size: 7.2rem;
+    font-weight: 700;
+  }
+
+  .feature__title-highlight::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 5rem;
+    background: url("Image/Vector.png") no-repeat;
+    margin-top: -2.5rem;
+  }
+
+  .feature__description {
+    margin: -6rem 0 3rem;
+  }
+  .extension {
+    background-color: #043873;
+  }
+  .extension__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5rem 0;
+    color: white;
+  }
+  .extension__title-highlight::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2rem;
+    background: url("Image/Vector.png") no-repeat;
+    margin-top: 1rem;
+    background-size: contain;
+  }
+  .extension .extension__description {
+    margin-bottom: 3rem;
+    margin-top: -1rem;
+  }
+  .customization__container {
+    display: flex;
+    align-items: center;
+    column-gap: 5rem;
+    padding: 5rem 0;
+  }
+  .pricing .pricing__list {
+    column-gap: 3rem;
+    margin: 10rem 0;
+  }
+  .pricing__header {
+    text-align: center;
+  }
+  .pricing__title--highlight::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2rem;
+    background: url("Image/Vector.png") no-repeat;
+    margin-top: -2.5rem;
+    background-position: right;
+    transform: translateX(-31%);
+    background-size: contain;
+    position: relative;
+    z-index: -1;
+  }
+  .pricing__item {
+    border-radius: 0.5rem;
+    padding: 3rem;
+    margin-bottom: 2rem;
+    border: 1px solid #ffe492;
+    width: 100%;
+    transition: all 0.3s ease;
+  }
+  .pricing__price {
+    font-size: 3.6rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+  }
+  .pricing__descript {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+  }
+  .pricing__features {
+    padding-left: 0;
+  }
+  .pricing__features .pricing__feature {
+    list-style-type: none;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+  }
+  .pricing__features .pricing__feature i {
+    margin-right: 0.5rem;
+  }
+  .pricing__button {
+    background-color: transparent;
+    border: 1px solid #ffe492;
+    color: black;
+    font-size: 1.6rem;
+  }
+  .pricing__item:hover {
+    background-color: #043873;
+    color: white;
+    transform: scaleY(1.1);
+  }
+  .pricing__item:hover .pricing__button {
+    color: white;
+    background-color: #4f9cf9;
+  }
+  .pricing__item:hover .pricing__price,
+  .pricing__features .pricing__feature i {
+    color: #ffe492;
+  }
+  .work-anywhere {
+    background-color: #043873;
+    text-align: center;
+    color: white;
+  }
+  .work-anywhere__content {
+    padding: 7rem 0;
+  }
+  .work-anywhere__title {
+    margin: 0 14% 1rem 14%;
+  }
+  .work-anywhere__description {
+    margin: 0 14% 3rem 14%;
+  }
+  .security {
+    margin: 5rem 0;
+  }
+  .security__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+  }
+  .security__highlight::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2.5rem;
+    background: url("Image/Vector.png") no-repeat;
+    margin-top: -2rem;
+    background-size: contain;
+    transform: translateX(25%);
+    position: relative;
+    z-index: -1;
+  }
+  .sponsors {
+    text-align: center;
+    margin-top: 10rem;
+    margin-bottom: 5rem;
+  }
+  .sponsors__highlight::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2.2rem;
+    background: url(Image/Vector.png) no-repeat;
+    margin-top: -2rem;
+    background-position: right;
+    transform: translateX(-34%);
+    background-size: contain;
+    position: relative;
+    z-index: -1;
+  }
+  .sponsors__list {
+    list-style-type: none;
+    padding: 5rem 0;
+  }
+  .integration-hero {
+    background-color: #043873;
+  }
+  .integration-hero__container {
+    display: flex;
+    justify-content: space-between;
+    padding: 5rem 0;
+    color: white;
+  }
+  .testimonials {
+    text-align: center;
+    margin: 10rem auto;
+  }
+  .testimonial-card img {
+    max-width: 100%;
+  }
+  .testimonials__list {
+    column-gap: 3rem;
+    padding: 5rem 0;
+  }
+  .testimonial-card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 3rem;
+    text-align: left;
+    border-radius: 1rem;
+    transition: all 0.1s ease;
+  }
+  .testimonial-card__author {
+    display: flex;
+    align-items: center;
+    margin-top: 4rem;
+    column-gap: 2rem;
+  }
+  .testimonial-card__info {
+    float: right;
+  }
+  .testimonial-card__text {
+    font-size: 1.8rem;
+    font-weight: 300;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid black;
+  }
+  .testimonial-card__name {
+    margin-bottom: 0.5rem;
+  }
+  .testimonial-card .QuoteIconWhite {
+    display: none;
+  }
+  .testimonial-card .QuoteIcon {
+    display: block;
+  }
+  .testimonial-card:hover {
+    background-color: #4f9cf9;
+    color: white !important;
+  }
+  .testimonial-card:hover .testimonial-card__name {
+    color: black;
+  }
+  .testimonial-card:hover .testimonial-card__role {
+    color: white;
+  }
+  .testimonial-card:hover .QuoteIconWhite {
+    display: block !important;
+  }
+  .testimonial-card:hover .QuoteIcon {
+    display: none;
+  }
 }
