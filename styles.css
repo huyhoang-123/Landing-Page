@@ -49,10 +49,7 @@ header {
   position: absolute;
   right: 0;
 }
-.navbar__mobile{
-  display: none;
- 
-}
+
 
 .navbar__nav {
   display: flex;
@@ -88,9 +85,7 @@ header {
   margin-bottom: 3rem;
 }
 
-.navbar__button--cta{
-  margin-bottom: 0!important;
-}
+
 
 /* Gộp các button */
 button,
@@ -161,6 +156,7 @@ button,
   .navbar__button--cta {
     background-color: #4f9cf9;
     color: white;
+      margin-bottom: 0!important;
   }
 
   .hero-section {
@@ -588,10 +584,7 @@ margin: 0 1rem;
  padding: 1.5rem 0;
 }
 #click:checked ~ .navbar__nav .navbar__list {
-  
-
  top: 7rem;
- 
 }
 
 
@@ -883,6 +876,9 @@ margin: 0 1rem;
   html {
     font-size: 45%;
   }
+       *::after {
+    display: none !important;
+  }
   .container {
     max-width: 90vw;
     margin: 0 2rem;
@@ -992,15 +988,17 @@ margin: 0 1rem;
 transform: translateY(1rem);
 }
 .feature__title-highlight::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 2rem;
-    background: url("Image/Vector.png") no-repeat;
-    background-size: contain;
-    position: relative;
-    z-index: -1;
-    transform: translate(8rem, 1rem);
+  content: "";
+        display: block;
+        width: 100%;
+        height: 1.5rem;
+        background: url(Image/Vector.png) no-repeat;
+        margin-top: -1rem;
+        background-position: right;
+        transform: translateX(-0.5rem);
+        background-size: contain;
+        position: relative;
+        z-index: -1;
   }
   .feature__description {
     margin: 0 0 3rem 0;
@@ -1087,9 +1085,7 @@ transform: translateY(1rem);
     width: 100%;
     flex: 0 0 100%;
     max-width: 100%;}
-      *::after {
-    display: none !important;
-  }
+ 
   }
 
 
