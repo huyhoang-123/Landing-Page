@@ -1,0 +1,18 @@
+$color-primary: #4f9cf9;
+$color-secondary: #043873;
+$color-accent: #ffe492;
+$color-white: #ffffff;
+$color-black: #000000;
+$color-gray: #666;
+
+@mixin flexItem(){
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+@mixin gridItem(){
+     flex-direction: column;
+    text-align: center;
+    padding: 3rem 0;
+}

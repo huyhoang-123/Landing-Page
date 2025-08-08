@@ -1,0 +1,262 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 62.5%;
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 56.25%;
+  }
+  html *::after {
+    display: none !important;
+  }
+}
+@media (max-width: 320px) {
+  html {
+    font-size: 45%;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  font-size: 1.8rem;
+  padding: 1rem 2rem;
+  background-color: #4f9cf9;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-bottom: 3rem;
+}
+
+.container {
+  max-width: 90vw;
+  margin: 0 auto;
+  position: relative;
+}
+@media (1152px <= width < 1440px) {
+  .container {
+    position: unset;
+  }
+}
+@media (max-width: 1152px) {
+  .container {
+    max-width: 90vw;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    max-width: 96vw;
+    padding: 0;
+    margin: 0 2rem;
+  }
+}
+@media (max-width: 320px) {
+  .container {
+    margin: 0 2rem;
+    padding: 0;
+    overflow: hidden;
+  }
+}
+
+.layout {
+  max-width: 50%;
+  flex: 0 0 auto;
+}
+@media (max-width: 768px) {
+  .layout {
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+}
+@media (max-width: 320px) {
+  .layout {
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+}
+
+.primary__title {
+  font-size: 6.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+@media (max-width: 768px) {
+  .primary__title {
+    font-size: 4rem;
+  }
+}
+@media (max-width: 320px) {
+  .primary__title {
+    font-size: 3.6rem;
+  }
+}
+
+.description {
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin-bottom: 3rem;
+}
+
+header {
+  background: url("/assets/images/Hero-section.png") no-repeat center/cover;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  color: #ffffff;
+  padding: 2rem 0;
+}
+.navbar__brand {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+.navbar__brand-name {
+  font-size: 2.4rem;
+  font-weight: bold;
+  padding-left: 1rem;
+}
+@media (max-width: 320px) {
+  .navbar__brand-name {
+    font-size: 1.2rem;
+  }
+}
+.navbar #click {
+  display: none;
+}
+@media (max-width: 1152px) {
+  .navbar #click:checked ~ .navbar__nav .navbar__list {
+    top: 7rem;
+  }
+}
+@media (max-width: 1152px) {
+  .navbar__actions {
+    display: block;
+    transform: translateX(-5rem);
+  }
+}
+@media (max-width: 320px) {
+  .navbar__actions {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .navbar__actions {
+    display: none;
+  }
+}
+.navbar__toggle {
+  display: none;
+  font-size: 2.4rem;
+  color: white;
+  background-color: transparent;
+  padding: 0;
+  position: absolute;
+  right: 0;
+}
+@media (max-width: 1152px) {
+  .navbar__toggle {
+    display: block;
+  }
+}
+@media (max-width: 768px) {
+  .navbar__toggle {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 2.5rem;
+  }
+}
+@media (max-width: 320px) {
+  .navbar__toggle {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 2rem;
+  }
+}
+.navbar__nav {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+.navbar__nav--items {
+  gap: 0.5rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+@media (max-width: 1152px) {
+  .navbar__list {
+    display: block;
+    position: absolute;
+    top: -100rem;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-color: #043873;
+    z-index: 2;
+    transition: all 0.3s ease-in-out;
+  }
+}
+.navbar__button {
+  margin-bottom: 0;
+}
+.navbar__button--login {
+  background-color: #ffe492;
+  color: black;
+  margin: 0 1rem;
+}
+
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  padding: 5rem 0;
+  color: #ffffff;
+}
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 3rem 0;
+    padding: 3rem 0;
+  }
+}
+@media (max-width: 320px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 3rem 0;
+    padding: 1rem 0;
+  }
+}
+.hero-section__content {
+  padding-right: 2rem;
+}
+
+/*# sourceMappingURL=style.css.map */

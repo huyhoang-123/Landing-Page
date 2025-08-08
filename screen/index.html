@@ -4,8 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link  rel="icon" href="../assets/images/LogoIcon.png" />
+    <link rel="stylesheet" href="/assets/sass/style.css">
+        <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
 </head>
 <body>
-    
+     <header>
+      <nav class="navbar container">
+        <div class="navbar__brand">
+          <img src="../assets/images/LogoIcon.png" class="navbar__logo" alt="Logo" />
+          <p class="navbar__brand-name">whitepace</p>
+        </div>
+        <input type="checkbox"  id="click" />
+        <label for="click" class="navbar__toggle" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </label>
+        <div class="navbar__nav">
+          <div class="navbar__list">
+            <a class="navbar__nav--items" href=""
+              >Products <i class="fa-solid fa-angle-down"></i></a>
+
+            <a href="" class="navbar__nav--items"
+              >Solutions <i class="fa-solid fa-angle-down"></i
+            ></a>
+            <a href="" class="navbar__nav--items"
+              >Resources <i class="fa-solid fa-angle-down"></i
+            ></a>
+            <a href="" class="navbar__nav--items"
+              >Pricing <i class="fa-solid fa-angle-down"></i
+            ></a>
+          </div>
+          <div class="navbar__actions">
+            <button class="navbar__button navbar__button--login">Login</button>
+            <button class="navbar__button navbar__button--cta">
+              Try Whitespace free
+              <i class="fa-solid fa-arrow-right" style="font-size: small"></i>
+            </button>
+          </div>
+          
+        </div>
+      </nav>
+
+      <section class="hero-section container">
+        <div class="hero-section__content layout">
+          <h1 class="primary__title">Get More Done with whitepace</h1>
+          <p class="description">
+            Project management software that enables your teams to collaborate,
+            plan, analyze and manage everyday tasks
+          </p>
+          <button class="hero-section__button">
+            Try Whitespace free
+            <i class="fa-solid fa-arrow-right" style="font-size: small"></i>
+          </button>
+        </div>
+        <div class="hero-section__image layout">
+          <img
+            src="../assets/images/Image-container.png"
+            alt="Hero Image"
+            class="hero__img"
+          />
+        </div>
+      </section>
+    </header>
 </body>
 </html>
