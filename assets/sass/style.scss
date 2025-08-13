@@ -1,200 +1,240 @@
 @use "_variable&_mixins.scss" as *;
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 62.5%;
-    @media (320px < width <= 768px) {
-        font-size: 56.25%;
-        *::after {
-            display: none !important;
-        }
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 62.5%;
+  @media (320px < width <= 768px) {
+    font-size: 56.25%;
+    *::after {
+      display: none !important;
     }
-    @media (max-width: 320px) {
-        font-size: 45%;
-    }
+  }
+  @media (max-width: 320px) {
+    font-size: 45%;
+  }
 }
 img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 button {
-    font-size: 1.8rem;
-    padding: 1rem 2rem;
-    background-color: #4f9cf9;
-    color: white;
-    border: none;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    margin-bottom: 3rem;
+  font-size: 1.8rem;
+  padding: 1rem 2rem;
+  background-color: #4f9cf9;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-bottom: 3rem;
 }
 .container {
-    margin: 0 5rem;
+  max-width: 90%;
+  margin: 0 auto;
+  position: relative;
+  @media (1152px <= width < 1440px) {
+    position: unset;
+  }
+  @media (768px < width <= 1152px) {
+    max-width: 905;
+    margin: 0 auto;
     position: relative;
     overflow: hidden;
-    @media (1152px <= width < 1440px) {
-        position: unset;
-        margin: 0 3rem;
-    }
-    @media (768px < width <= 1152px) {
-        margin: 0 2rem;
-        position: relative;
-        overflow: hidden;
-    }
-    @media (320px < width <= 768px) {
-        padding: 0;
-        margin: 0 2rem;
-    }
-    @media (max-width: 320px) {
-        overflow: hidden;
-    }
+  }
+  @media (320px < width <= 768px) {
+    max-width: 96%;
+    padding: 0;
+    margin: 0 2rem;
+  }
+  @media (max-width: 320px) {
+    margin: 0 2rem;
+    padding: 0;
+    overflow: hidden;
+  }
 }
 .flex-grid-item {
-    @include flexItem();
-    padding: 5rem 0;
-    @media (max-width: 768px) {
-        @include gridItem();
-        padding: 3rem 0;
-    }
+  @include flexItem();
+  padding: 5rem 0;
+  @media (max-width: 768px) {
+    @include gridItem();
+    padding: 3rem 0;
+  }
 }
 .layout {
-    max-width: 50%;
-    flex: 0 0 auto;
-    @media (max-width: 768px) {
-        max-width: 100%;
-    }
+  max-width: 50%;
+  flex: 0 0 auto;
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
 }
 .carousel-item {
-    max-width: 30%;
-    flex: 0 0 auto;
-    justify-content: space-between;
-    @media (max-width: 768px) {
-        max-width: 100%;
-    }
+  max-width: 30%;
+  justify-content:space-between ;
+  flex: 0 0 auto;
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
 }
 .primary__title {
-    font-size: 6.4rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    @media (320px < width <= 768px) {
-        font-size: 4rem;
-    }
-    @media (max-width: 320px) {
-        font-size: 3.6rem;
-    }
+  font-size: 6.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  @media (320px < width <= 768px) {
+    font-size: 4rem;
+  }
+  @media (max-width: 320px) {
+    font-size: 3.6rem;
+  }
 }
 .description {
-    font-size: 1.8rem;
-    font-weight: 300;
-    margin-bottom: 3rem;
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin-bottom: 3rem;
 }
 header {
-    background: url("/assets/images/Hero-section.png") no-repeat center / cover;
+  background: url("/assets/images/Hero-section.png") no-repeat center / cover;
 }
 .navbar {
+  @include flexItem();
+  color: $color-white;
+  padding: 2rem 0;
+  &__brand {
     @include flexItem();
-    color: $color-white;
-    padding: 2rem 0;
-    &__brand {
-        @include flexItem();
-        &-name {
-            font-size: 2.4rem;
-            font-weight: bold;
-            padding-left: 1rem;
-            @media (max-width: 320px) {
-                font-size: 1.2rem;
-            }
-        }
+    &-name {
+      font-size: 2.4rem;
+      font-weight: bold;
+      padding-left: 1rem;
+      @media (max-width: 320px) {
+        font-size: 1.2rem;
+      }
     }
-    #click {
-        display: none;
-        &:checked ~ .navbar__nav .navbar__list {
-            @media (max-width: 1152px) {
-                top: 7rem;
-            }
-        }
+  }
+  #click {
+    display: none;
+    &:checked ~ .navbar__nav .navbar__list {
+      @media (max-width: 1152px) {
+        top: 7rem;
+      }
     }
-    &__actions {
-        @media (max-width: 1152px) {
-            display: block;
-            transform: translateX(-5rem);
-        }
-        @media (max-width: 768px) {
-            display: none;
-        }
+  }
+  &__actions {
+    @media (max-width: 1152px) {
+      display: block;
+      transform: translateX(-5rem);
     }
-    &__toggle {
-        display: none;
-        font-size: 2.4rem;
-        color: white;
-        background-color: transparent;
-        padding: 0;
-        position: absolute;
-        right: 0;
-        @media (max-width: 1152px) {
-            display: block;
-        }
-        @media (max-width: 768px) {
-            position: absolute;
-            right: 0;
-            top: 2.5rem;
-        }
-        @media (max-width: 320px) {
-            top: 2rem;
-        }
-    }
-    &__nav {
-        @include flexItem();
-        &--items {
-            gap: 0.5rem;
-            font-size: 1.6rem;
-            font-weight: 400;
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-        }
-    }
-    &__list {
-        @media (max-width: 1152px) {
-            display: block;
-            position: absolute;
-            top: -100rem;
-            left: 0;
-            width: 100%;
-            height: auto;
-            background-color: #043873;
-            z-index: 2;
-            transition: all 0.3s ease-in-out;
-        }
-    }
-    &__button {
-        margin-bottom: 0;
-        &--login {
-            background-color: $color-accent;
-            color: black;
-            margin: 0 1rem;
-        }
-    }
-}
-.hero-section {
-    @include flexItem();
-    padding: 5rem 0;
-    color: $color-white;
     @media (max-width: 768px) {
-        @include gridItem();
-        padding: 3rem 0;
+      display: none;
+    }
+  }
+  &__toggle {
+    display: none;
+    font-size: 2.4rem;
+    color: white;
+    background-color: transparent;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    @media (max-width: 1152px) {
+      display: block;
+    }
+    @media (max-width: 768px) {
+      position: absolute;
+      right: 0;
+      top: 2.5rem;
     }
     @media (max-width: 320px) {
-        padding: 1rem 0;
+      position: absolute;
+      top: 2rem;
     }
+  }
+  &__nav {
+    @include flexItem();
+    &--items {
+      gap: 0.5rem;
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+    }
+  }
+  &__list {
+    @media (max-width: 1152px) {
+      display: block;
+      position: absolute;
+      top: -100rem;
+      left: 0;
+      width: 100%;
+      height: auto;
+      background-color: #043873;
+      z-index: 2;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+  &__button {
+    margin-bottom: 0;
+    &--login {
+      background-color: $color-accent;
+      color: black;
+      margin: 0 1rem;
+    }
+  }
+}
+.hero-section {
+  @include flexItem();
+  padding: 5rem 0;
+  color: $color-white;
+  @media (max-width: 768px) {
+    @include gridItem();
+    padding: 3rem 0;
+  }
+  @media (max-width: 320px) {
+    padding: 1rem 0;
+  }
+  &__content {
+    padding-right: 2rem;
+  }
+}
+.feature {
+    background: url("/assets/images/Work-management.png") no-repeat top/contain;
     &__content {
-        padding-right: 2rem;
+        padding: 0 2rem;
+    }
+    &__title-highlight::after {
+        content: "";
+        display: block;
+        max-width: 100%;
+        height: 5rem;
+        background: url("/assets/images/Vector.png") no-repeat;
+        margin-top: -2.5rem;
     }
 }
+.extension {
+    background-color: $color-secondary;
+    color: $color-white;
+    &__content {
+        position: relative;
+        z-index: 2;
+        padding-right: 2rem;
+    }
+    &__title-highlight::after {
+        content: "";
+        display: block;
+        max-width: 100%;
+        height: 2.7rem;
+        background: url("/assets/images/Vector.png") no-repeat;
+        background-size: contain;
+        background-position: center;
+        margin-top: -2rem;
+        position: relative;
+        z-index: -1;
+    }
+}
+

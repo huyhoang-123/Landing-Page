@@ -42,31 +42,34 @@ button {
 }
 
 .container {
-  margin: 0 5rem;
+  max-width: 90%;
+  margin: 0 auto;
   position: relative;
-  overflow: hidden;
 }
 @media (1152px <= width < 1440px) {
   .container {
     position: unset;
-    margin: 0 3rem;
   }
 }
 @media (768px < width <= 1152px) {
   .container {
-    margin: 0 2rem;
+    max-width: 905;
+    margin: 0 auto;
     position: relative;
     overflow: hidden;
   }
 }
 @media (320px < width <= 768px) {
   .container {
+    max-width: 96%;
     padding: 0;
     margin: 0 2rem;
   }
 }
 @media (max-width: 320px) {
   .container {
+    margin: 0 2rem;
+    padding: 0;
     overflow: hidden;
   }
 }
@@ -99,8 +102,8 @@ button {
 
 .carousel-item {
   max-width: 30%;
-  flex: 0 0 auto;
   justify-content: space-between;
+  flex: 0 0 auto;
 }
 @media (max-width: 768px) {
   .carousel-item {
@@ -200,6 +203,7 @@ header {
 }
 @media (max-width: 320px) {
   .navbar__toggle {
+    position: absolute;
     top: 2rem;
   }
 }
@@ -262,6 +266,43 @@ header {
 }
 .hero-section__content {
   padding-right: 2rem;
+}
+
+.feature {
+  background: url("/assets/images/Work-management.png") no-repeat top/contain;
+}
+.feature__content {
+  padding: 0 2rem;
+}
+.feature__title-highlight::after {
+  content: "";
+  display: block;
+  max-width: 100%;
+  height: 5rem;
+  background: url("/assets/images/Vector.png") no-repeat;
+  margin-top: -2.5rem;
+}
+
+.extension {
+  background-color: #043873;
+  color: #ffffff;
+}
+.extension__content {
+  position: relative;
+  z-index: 2;
+  padding-right: 2rem;
+}
+.extension__title-highlight::after {
+  content: "";
+  display: block;
+  max-width: 100%;
+  height: 2.7rem;
+  background: url("/assets/images/Vector.png") no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin-top: -2rem;
+  position: relative;
+  z-index: -1;
 }
 
 /*# sourceMappingURL=style.css.map */
