@@ -36,20 +36,19 @@ button {
     margin-bottom: 3rem;
 }
 .container {
-    max-width: 90%;
-    margin: 0 auto;
+    margin: 0 5rem;
     position: relative;
+    overflow: hidden;
     @media (1152px <= width < 1440px) {
         position: unset;
+        margin: 0 3rem;
     }
     @media (768px < width <= 1152px) {
-        max-width: 905;
-        margin: 0 auto;
+        margin: 0 2rem;
         position: relative;
         overflow: hidden;
     }
     @media (320px < width <= 768px) {
-        max-width: 96%;
         padding: 0;
         margin: 0 2rem;
     }
@@ -73,8 +72,9 @@ button {
     }
 }
 .carousel-item {
-    max-width: 33.33%;
+    max-width: 30%;
     flex: 0 0 auto;
+    justify-content: space-between;
     @media (max-width: 768px) {
         max-width: 100%;
     }
@@ -260,9 +260,6 @@ header {
         background-position: center;
         margin-top: -2rem;
     }
-    &__list {
-        column-gap: clamp(1rem, 2vw, 3rem);
-    }
     &__item {
         text-align: left;
         border-radius: 0.5rem;
@@ -366,9 +363,6 @@ header {
 .testimonial {
     text-align: center;
     margin: 10rem auto;
-    &__list {
-        column-gap: clamp(1rem, 2vw, 3rem);
-    }
     &-card {
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         padding: 3rem;
