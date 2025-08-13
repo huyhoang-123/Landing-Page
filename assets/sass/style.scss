@@ -305,3 +305,53 @@ header {
     }
   }
 }
+.work-anywhere {
+  background-color: $color-secondary;
+  text-align: center;
+  color: $color-white;
+  &__content {
+  padding: 5rem 0;
+}
+&__highlight::after {
+    content: "";
+    display: block;
+    max-width: 100%;
+    height: 2.7rem;
+    background: url("/assets/images/Vector.png") no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-top: -2rem;
+  }
+}
+.security{
+    &__highlight::after {
+        content: "";
+        display: block;
+        max-width: 100%;
+        height: 2.7rem;
+        background: url("/assets/images/Vector.png") no-repeat;
+        background-size: contain;
+        background-position: center;
+        margin-top: -2rem;
+    }
+    &__content {
+       padding-right: 2rem;
+    }
+}
+.sponsors{
+    text-align: center;
+    &__highlight::after {
+        content: "";
+        display: block;
+        max-width: 100%;
+        height: 2.7rem;
+        background: url("/assets/images/Vector.png") no-repeat;
+        background-size: contain;
+        background-position: center;
+        margin-top: -2rem;
+    }
+    &__item{
+        list-style-type: none;
+        padding: 3rem 1rem;
+    }
+}
