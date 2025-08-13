@@ -187,3 +187,27 @@ header {
         padding-right: 2rem;
     }
 }
+.feature {
+    background: url("/assets/images/Work-management.png") no-repeat top/contain;
+&__item {
+@include flexItem();
+  padding: 5rem 0;
+  @media (max-width: 768px) {
+    @include gridItem();
+  }
+}
+&__content{
+    padding: 0 2rem;
+}
+&__title-highlight::after {
+  content: "";
+  display: block;
+  max-width: 100%;
+  height: 5rem;
+  background: url("/assets/images/Vector.png") no-repeat;
+  margin-top: -2.5rem;
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+}
