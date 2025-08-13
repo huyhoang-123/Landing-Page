@@ -11,7 +11,7 @@ html {
     font-weight: 400;
     font-style: normal;
     font-size: 62.5%;
-    @media (max-width: 768px) {
+ @media (320px < width <= 768px) {
         font-size: 56.25%;
         *::after {
             display: none !important;
@@ -36,28 +36,23 @@ button {
     margin-bottom: 3rem;
 }
 .container {
-    // min-width: 1440px
-    max-width: 90vw;
+    max-width: 90%;
     margin: 0 auto;
     position: relative;
-
     @media (1152px <= width < 1440px) {
         position: unset;
     }
-
-    @media (max-width: 1152px) {
-        max-width: 90vw;
+    @media (768px < width <= 1152px) {
+        max-width: 905;
         margin: 0 auto;
         position: relative;
         overflow: hidden;
     }
-
-    @media (max-width: 768px) {
-        max-width: 96vw;
+    @media (320px < width <= 768px) {
+        max-width: 96%;
         padding: 0;
         margin: 0 2rem;
     }
-
     @media (max-width: 320px) {
         margin: 0 2rem;
         padding: 0;
@@ -71,16 +66,12 @@ button {
         max-width: 100%;
         flex: 0 0 100%;
     }
-    @media (max-width: 320px) {
-        max-width: 100%;
-        flex: 0 0 100%;
-    }
 }
 .primary__title {
     font-size: 6.4rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    @media (max-width: 768px) {
+    @media (320px < width <= 768px) {
         font-size: 4rem;
     }
     @media (max-width: 320px) {
@@ -104,7 +95,6 @@ header {
         &-name {
             font-size: 2.4rem;
             font-weight: bold;
-
             padding-left: 1rem;
             @media (max-width: 320px) {
                 font-size: 1.2rem;
@@ -119,14 +109,10 @@ header {
             }
         }
     }
-
     &__actions {
         @media (max-width: 1152px) {
             display: block;
             transform: translateX(-5rem);
-        }
-        @media (max-width: 320px) {
-            display: none;
         }
         @media (max-width: 768px) {
             display: none;
@@ -144,15 +130,12 @@ header {
             display: block;
         }
         @media (max-width: 768px) {
-            display: block;
             position: absolute;
             right: 0;
             top: 2.5rem;
         }
         @media (max-width: 320px) {
-            display: block;
             position: absolute;
-            right: 0;
             top: 2rem;
         }
     }
@@ -168,11 +151,9 @@ header {
         }
     }
     &__list {
-        // display: flex;
         @media (max-width: 1152px) {
             display: block;
             position: absolute;
-
             top: -100rem;
             left: 0;
             width: 100%;
@@ -200,7 +181,6 @@ header {
         padding: 3rem 0;
     }
     @media (max-width: 320px) {
-        @include gridItem();
         padding: 1rem 0;
     }
     &__content {

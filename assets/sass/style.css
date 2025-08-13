@@ -11,7 +11,7 @@ html {
   font-style: normal;
   font-size: 62.5%;
 }
-@media (max-width: 768px) {
+@media (320px < width <= 768px) {
   html {
     font-size: 56.25%;
   }
@@ -42,7 +42,7 @@ button {
 }
 
 .container {
-  max-width: 90vw;
+  max-width: 90%;
   margin: 0 auto;
   position: relative;
 }
@@ -51,17 +51,17 @@ button {
     position: unset;
   }
 }
-@media (max-width: 1152px) {
+@media (768px < width <= 1152px) {
   .container {
-    max-width: 90vw;
+    max-width: 905;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
   }
 }
-@media (max-width: 768px) {
+@media (320px < width <= 768px) {
   .container {
-    max-width: 96vw;
+    max-width: 96%;
     padding: 0;
     margin: 0 2rem;
   }
@@ -84,19 +84,13 @@ button {
     flex: 0 0 100%;
   }
 }
-@media (max-width: 320px) {
-  .layout {
-    max-width: 100%;
-    flex: 0 0 100%;
-  }
-}
 
 .primary__title {
   font-size: 6.4rem;
   font-weight: 700;
   margin-bottom: 1rem;
 }
-@media (max-width: 768px) {
+@media (320px < width <= 768px) {
   .primary__title {
     font-size: 4rem;
   }
@@ -155,11 +149,6 @@ header {
     transform: translateX(-5rem);
   }
 }
-@media (max-width: 320px) {
-  .navbar__actions {
-    display: none;
-  }
-}
 @media (max-width: 768px) {
   .navbar__actions {
     display: none;
@@ -181,7 +170,6 @@ header {
 }
 @media (max-width: 768px) {
   .navbar__toggle {
-    display: block;
     position: absolute;
     right: 0;
     top: 2.5rem;
@@ -189,9 +177,7 @@ header {
 }
 @media (max-width: 320px) {
   .navbar__toggle {
-    display: block;
     position: absolute;
-    right: 0;
     top: 2rem;
   }
 }
@@ -249,9 +235,6 @@ header {
 }
 @media (max-width: 320px) {
   .hero-section {
-    flex-direction: column;
-    text-align: center;
-    padding: 3rem 0;
     padding: 1rem 0;
   }
 }
