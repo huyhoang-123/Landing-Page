@@ -11,7 +11,7 @@ html {
   font-weight: 400;
   font-style: normal;
   font-size: 62.5%;
-  @media (320px < width <= 768px) {
+  @media (max-width <= 768px) {
     font-size: 56.25%;
     *::after {
       display: none !important;
@@ -36,26 +36,21 @@ button {
   margin-bottom: 3rem;
 }
 .container {
-  max-width: 90%;
-  margin: 0 auto;
+  margin: 0 3.2rem;
   position: relative;
   @media (1152px <= width < 1440px) {
     position: unset;
   }
   @media (768px < width <= 1152px) {
-    max-width: 905;
-    margin: 0 auto;
     position: relative;
     overflow: hidden;
   }
-  @media (320px < width <= 768px) {
-    max-width: 96%;
+  @media (max-width <= 768px) {
     padding: 0;
     margin: 0 2rem;
   }
   @media (max-width: 320px) {
-    margin: 0 2rem;
-    padding: 0;
+    margin: 0 1.6rem;
     overflow: hidden;
   }
 }
@@ -86,7 +81,7 @@ button {
   font-size: 6.4rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  @media (320px < width <= 768px) {
+  @media (max-width<= 768px) {
     font-size: 4rem;
   }
   @media (max-width: 320px) {
@@ -150,7 +145,6 @@ header {
       top: 2.5rem;
     }
     @media (max-width: 320px) {
-      position: absolute;
       top: 2rem;
     }
   }
@@ -204,9 +198,13 @@ header {
 }
 .feature {
     background: url("/assets/images/Work-management.png") no-repeat top/contain;
-    &__content {
-        padding: 0 2rem;
+&__content {
+  &--top{
+    @media (768px <= width < 1152px) {
+      padding-right: 2rem;
     }
+  }
+}
     &__title-highlight::after {
         content: "";
         display: block;

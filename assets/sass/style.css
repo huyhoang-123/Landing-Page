@@ -11,7 +11,7 @@ html {
   font-style: normal;
   font-size: 62.5%;
 }
-@media (320px < width <= 768px) {
+@media (max-width <= 768px) {
   html {
     font-size: 56.25%;
   }
@@ -42,8 +42,7 @@ button {
 }
 
 .container {
-  max-width: 90%;
-  margin: 0 auto;
+  margin: 0 3.2rem;
   position: relative;
 }
 @media (1152px <= width < 1440px) {
@@ -53,23 +52,19 @@ button {
 }
 @media (768px < width <= 1152px) {
   .container {
-    max-width: 905;
-    margin: 0 auto;
     position: relative;
     overflow: hidden;
   }
 }
-@media (320px < width <= 768px) {
+@media (max-width <= 768px) {
   .container {
-    max-width: 96%;
     padding: 0;
     margin: 0 2rem;
   }
 }
 @media (max-width: 320px) {
   .container {
-    margin: 0 2rem;
-    padding: 0;
+    margin: 0 1.6rem;
     overflow: hidden;
   }
 }
@@ -116,7 +111,7 @@ button {
   font-weight: 700;
   margin-bottom: 1rem;
 }
-@media (320px < width <= 768px) {
+@media (max-width <= 768px) {
   .primary__title {
     font-size: 4rem;
   }
@@ -203,7 +198,6 @@ header {
 }
 @media (max-width: 320px) {
   .navbar__toggle {
-    position: absolute;
     top: 2rem;
   }
 }
@@ -271,8 +265,10 @@ header {
 .feature {
   background: url("/assets/images/Work-management.png") no-repeat top/contain;
 }
-.feature__content {
-  padding: 0 2rem;
+@media (768px <= width < 1152px) {
+  .feature__content--top {
+    padding-right: 2rem;
+  }
 }
 .feature__title-highlight::after {
   content: "";
