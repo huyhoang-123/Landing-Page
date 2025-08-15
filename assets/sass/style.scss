@@ -205,7 +205,7 @@ header {
     }
   }
 }
-    &__title-highlight::after {
+    &__highlight::after {
         content: "";
         display: block;
         max-width: 100%;
@@ -222,7 +222,7 @@ header {
         z-index: 2;
         padding-right: 2rem;
     }
-    &__title-highlight::after {
+    &__highlight::after {
         content: "";
         display: block;
         max-width: 100%;
@@ -252,7 +252,7 @@ header {
 }
 .pricing {
   text-align: center;
-  &__title--highlight::after {
+  &__highlight::after {
     content: "";
     display: block;
     max-width: 100%;
