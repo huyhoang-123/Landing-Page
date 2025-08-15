@@ -270,7 +270,7 @@ header {
     padding-right: 2rem;
   }
 }
-.feature__title-highlight::after {
+.feature__highlight::after {
   content: "";
   display: block;
   max-width: 100%;
@@ -288,7 +288,7 @@ header {
   z-index: 2;
   padding-right: 2rem;
 }
-.extension__title-highlight::after {
+.extension__highlight::after {
   content: "";
   display: block;
   max-width: 100%;
@@ -299,6 +299,85 @@ header {
   margin-top: -2rem;
   position: relative;
   z-index: -1;
+}
+
+.customization__content {
+  padding-left: 2rem;
+}
+.customization__highlight::after {
+  content: "";
+  display: block;
+  max-width: 100%;
+  height: 2.7rem;
+  background: url("/assets/images/Vector.png") no-repeat;
+  background-size: contain;
+  background-position: left;
+  margin-top: -2rem;
+}
+
+.pricing {
+  text-align: center;
+}
+.pricing__highlight::after {
+  content: "";
+  display: block;
+  max-width: 100%;
+  height: 2.7rem;
+  background: url("/assets/images/Vector.png") no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin-top: -2rem;
+}
+.pricing__item {
+  text-align: left;
+  border-radius: 0.5rem;
+  padding: 3rem;
+  margin-bottom: 2rem;
+  border: 1px solid #ffe492;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+.pricing__item:hover {
+  background-color: #043873;
+  color: #ffffff;
+  transform: scaleY(1.1);
+}
+.pricing__item:hover .pricing__button {
+  background-color: #4f9cf9;
+  color: #ffffff;
+}
+.pricing__item:hover .pricing__price,
+.pricing__item:hover .fa-circle-check {
+  color: #ffe492;
+}
+.pricing__plan-name {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.pricing__price {
+  font-size: 3.6rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+.pricing__descript {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+.pricing__feature {
+  list-style-type: none;
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+.pricing__feature i {
+  margin-right: 0.5rem;
+}
+.pricing__button {
+  color: black;
+  background-color: #ffffff;
+  border: 1px solid #ffe492;
 }
 
 /*# sourceMappingURL=style.css.map */

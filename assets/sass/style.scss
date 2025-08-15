@@ -205,7 +205,7 @@ header {
     }
   }
 }
-    &__title-highlight::after {
+    &__highlight::after {
         content: "";
         display: block;
         max-width: 100%;
@@ -222,7 +222,7 @@ header {
         z-index: 2;
         padding-right: 2rem;
     }
-    &__title-highlight::after {
+    &__highlight::after {
         content: "";
         display: block;
         max-width: 100%;
@@ -234,5 +234,84 @@ header {
         position: relative;
         z-index: -1;
     }
+}
+.customization {
+  &__content {
+    padding-left: 2rem;
+  }
+  &__highlight::after {
+    content: "";
+    display: block;
+    max-width: 100%;
+    height: 2.7rem;
+    background: url("/assets/images/Vector.png") no-repeat;
+    background-size: contain;
+    background-position: left;
+    margin-top: -2rem;
+  }
+}
+.pricing {
+  text-align: center;
+  &__highlight::after {
+    content: "";
+    display: block;
+    max-width: 100%;
+    height: 2.7rem;
+    background: url("/assets/images/Vector.png") no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-top: -2rem;
+  }
+  &__item {
+    text-align: left;
+    border-radius: 0.5rem;
+    padding: 3rem;
+    margin-bottom: 2rem;
+    border: 1px solid #ffe492;
+    width: 100%;
+    transition: all 0.3s ease;
+    &:hover {
+      background-color: $color-secondary;
+      color: $color-white;
+      transform: scaleY(1.1);
+      .pricing__button {
+        background-color: $color-primary;
+        color: $color-white;
+      }
+      .pricing__price,
+      .fa-circle-check {
+        color: $color-accent;
+      }
+    }
+  }
+  &__plan-name {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  &__price {
+    font-size: 3.6rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+  }
+  &__descript {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+  }
+  &__feature {
+    list-style-type: none;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    i {
+      margin-right: 0.5rem;
+    }
+  }
+  &__button {
+    color: black;
+    background-color: $color-white;
+    border: 1px solid #ffe492;
+  }
 }
 
