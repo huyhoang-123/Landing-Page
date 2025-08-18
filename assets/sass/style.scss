@@ -71,7 +71,7 @@ button {
 }
 .carousel-item {
   max-width: 30%;
-  justify-content:space-between ;
+  justify-content: space-between;
   flex: 0 0 auto;
   @media (max-width: 768px) {
     max-width: 100%;
@@ -197,43 +197,43 @@ header {
   }
 }
 .feature {
-    background: url("/assets/images/Work-management.png") no-repeat top/contain;
-&__content {
-  &--top{
-    @media (768px <= width < 1152px) {
-      padding-right: 2rem;
+  background: url("/assets/images/Work-management.png") no-repeat top/contain;
+  &__content {
+    &--top {
+      @media (768px <= width < 1152px) {
+        padding-right: 2rem;
+      }
     }
   }
-}
-    &__highlight::after {
-        content: "";
-        display: block;
-        max-width: 100%;
-        height: 5rem;
-        background: url("/assets/images/Vector.png") no-repeat;
-        margin-top: -2.5rem;
-    }
+  &__highlight::after {
+    content: "";
+    display: block;
+    max-width: 100%;
+    height: 5rem;
+    background: url("/assets/images/Vector.png") no-repeat;
+    margin-top: -2.5rem;
+  }
 }
 .extension {
-    background-color: $color-secondary;
-    color: $color-white;
-    &__content {
-        position: relative;
-        z-index: 2;
-        padding-right: 2rem;
-    }
-    &__highlight::after {
-        content: "";
-        display: block;
-        max-width: 100%;
-        height: 2.7rem;
-        background: url("/assets/images/Vector.png") no-repeat;
-        background-size: contain;
-        background-position: center;
-        margin-top: -2rem;
-        position: relative;
-        z-index: -1;
-    }
+  background-color: $color-secondary;
+  color: $color-white;
+  &__content {
+    position: relative;
+    z-index: 2;
+    padding-right: 2rem;
+  }
+  &__highlight::after {
+    content: "";
+    display: block;
+    max-width: 100%;
+    height: 2.7rem;
+    background: url("/assets/images/Vector.png") no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-top: -2rem;
+    position: relative;
+    z-index: -1;
+  }
 }
 .customization {
   &__content {
@@ -315,35 +315,177 @@ header {
   }
 }
 .work-anywhere {
-    background-color: $color-secondary;
-    text-align: center;
-    color: $color-white;
-    &__content {
-        padding: 5rem 0;
-    }
-    &__highlight::after {
-        content: "";
-        display: block;
-        max-width: 100%;
-        height: 2.7rem;
-        background: url("/assets/images/Vector.png") no-repeat;
-        background-size: contain;
-        background-position: center;
-        margin-top: -2rem;
-    }
+  background-color: $color-secondary;
+  text-align: center;
+  color: $color-white;
+  &__content {
+    padding: 5rem 0;
+  }
+  &__highlight::after {
+    content: "";
+    display: block;
+    max-width: 100%;
+    height: 2.7rem;
+    background: url("/assets/images/Vector.png") no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-top: -2rem;
+  }
 }
 .security {
-   &__content {
-        padding-right: 2rem;
+  &__content {
+    padding-right: 2rem;
+  }
+  &__highlight::after {
+    content: "";
+    display: block;
+    max-width: 100%;
+    height: 2.7rem;
+    background: url("/assets/images/Vector.png") no-repeat;
+    background-size: contain;
+    background-position: bottom;
+    margin-top: -2rem;
+  }
+}
+.sponsors {
+  text-align: center;
+  &__highlight::after {
+    content: "";
+    display: block;
+    max-width: 100%;
+    height: 2.7rem;
+    background: url("/assets/images/Vector.png") no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-top: -2rem;
+  }
+  &__item {
+    list-style-type: none;
+    padding: 3rem 1rem;
+  }
+}
+.integration-hero {
+  background-color: $color-secondary;
+  color: $color-white;
+  &__right {
+    padding-left: 2rem;
+    @media (max-width: 768px) {
+      margin-top: 4rem;
+      text-align: center;
     }
-    &__highlight::after {
-        content: "";
-        display: block;
+  }
+}
+.testimonial {
+  text-align: center;
+  margin: 10rem auto;
+  .QuoteIconWhite {
+    display: none;
+  }
+  &-card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 3rem;
+    text-align: left;
+    border-radius: 10px;
+    transition: all 0.1s ease;
+    &__text {
+      font-size: 1.8rem;
+      font-weight: 300;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid black;
+    }
+    &__author {
+      display: flex;
+      align-items: center;
+      margin-top: 4rem;
+      column-gap: 2rem;
+    }
+    &__name {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    &__role {
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: #666;
+    }
+    &:hover {
+      background-color: #4f9cf9;
+      color: white !important;
+      .QuoteIconWhite {
+        display: block !important;
+      }
+      .QuoteIcon {
+        display: none;
+      }
+    }
+  }
+}
+.footer {
+  background-color: $color-secondary;
+  color: $color-white;
+  padding: 5rem 0;
+  text-align: center;
+  @media (max-width: 768px) {
+    text-align: left;
+  }
+  @media (max-width: 320px) {
+    text-align: center;
+  }
+  &__cta {
+    &-sales {
+      font-size: 1.8rem;
+      font-weight: 300;
+      margin-bottom: 3rem;
+    }
+    &-icon {
+      padding: 0 1rem;
+    }
+  }
+  &__brand-name {
+    font-size: 2.4rem;
+    font-weight: 700;
+  }
+  &__list {
+    text-align: left;
+    align-items: flex-start;
+    @media (max-width: 320px) {
+      text-align: center;
+      align-items: center;
+    }
+    &--item {
+      max-width: 20%;
+      flex: 0 0 auto;
+      padding: 2rem;
+      @media (max-width: 768px) {
         max-width: 100%;
-        height: 2.7rem;
-        background: url("/assets/images/Vector.png") no-repeat;
-        background-size: contain;
-        background-position: bottom;
-        margin-top: -2rem;
+        padding-left: 0;
+      }
     }
+    &--title {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+  }
+  &__link,
+  &__Document,
+  &__social-link {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 400;
+    padding-bottom: 2rem;
+    list-style-type: none;
+  }
+  .layout {
+    column-gap: 1rem;
+  }
+  &__legal {
+    display: flex;
+    align-items: center;
+    @media (max-width: 320px) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
 }

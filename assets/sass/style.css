@@ -413,4 +413,158 @@ header {
   margin-top: -2rem;
 }
 
+.sponsors {
+  text-align: center;
+}
+.sponsors__highlight::after {
+  content: "";
+  display: block;
+  max-width: 100%;
+  height: 2.7rem;
+  background: url("/assets/images/Vector.png") no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin-top: -2rem;
+}
+.sponsors__item {
+  list-style-type: none;
+  padding: 3rem 1rem;
+}
+
+.integration-hero {
+  background-color: #043873;
+  color: #ffffff;
+}
+.integration-hero__right {
+  padding-left: 2rem;
+}
+@media (max-width: 768px) {
+  .integration-hero__right {
+    margin-top: 4rem;
+    text-align: center;
+  }
+}
+
+.testimonial {
+  text-align: center;
+  margin: 10rem auto;
+}
+.testimonial .QuoteIconWhite {
+  display: none;
+}
+.testimonial-card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 3rem;
+  text-align: left;
+  border-radius: 10px;
+  transition: all 0.1s ease;
+}
+.testimonial-card__text {
+  font-size: 1.8rem;
+  font-weight: 300;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid black;
+}
+.testimonial-card__author {
+  display: flex;
+  align-items: center;
+  margin-top: 4rem;
+  column-gap: 2rem;
+}
+.testimonial-card__name {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.testimonial-card__role {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #666;
+}
+.testimonial-card:hover {
+  background-color: #4f9cf9;
+  color: white !important;
+}
+.testimonial-card:hover .QuoteIconWhite {
+  display: block !important;
+}
+.testimonial-card:hover .QuoteIcon {
+  display: none;
+}
+
+.footer {
+  background-color: #043873;
+  color: #ffffff;
+  padding: 5rem 0;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .footer {
+    text-align: left;
+  }
+}
+@media (max-width: 320px) {
+  .footer {
+    text-align: center;
+  }
+}
+.footer__cta-sales {
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin-bottom: 3rem;
+}
+.footer__cta-icon {
+  padding: 0 1rem;
+}
+.footer__brand-name {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+.footer__list {
+  text-align: left;
+  align-items: flex-start;
+}
+@media (max-width: 320px) {
+  .footer__list {
+    text-align: center;
+    align-items: center;
+  }
+}
+.footer__list--item {
+  max-width: 20%;
+  flex: 0 0 auto;
+  padding: 2rem;
+}
+@media (max-width: 768px) {
+  .footer__list--item {
+    max-width: 100%;
+    padding-left: 0;
+  }
+}
+.footer__list--title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.footer__link, .footer__Document, .footer__social-link {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 400;
+  padding-bottom: 2rem;
+  list-style-type: none;
+}
+.footer .layout {
+  column-gap: 1rem;
+}
+.footer__legal {
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 320px) {
+  .footer__legal {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
