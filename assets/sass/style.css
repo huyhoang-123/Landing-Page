@@ -566,4 +566,88 @@ header {
   }
 }
 
+.form-validation {
+  position: absolute;
+  max-width: 50rem;
+  width: 100%;
+  background: #fff;
+  padding: 4rem;
+  border-radius: 6px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.form-validation h2 {
+  position: relative;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #333;
+}
+.form-validation h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 28px;
+  border-radius: 12px;
+  background: #4070f4;
+}
+.form-validation form {
+  margin-top: 3rem;
+}
+.form-validation__box {
+  height: 5rem;
+  margin: 2rem 0;
+}
+.form-validation__box input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding: 0 1.5rem;
+  font-size: 1.7rem;
+  font-weight: 400;
+  color: #333;
+  border: 1.5px solid #c7bebe;
+  border-bottom-width: 2.5px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+.form-validation__box input:focus, .form-validation__box input:valid {
+  border-color: #4070f4;
+}
+.form-validation__box.button input {
+  color: #fff;
+  letter-spacing: 1px;
+  border: none;
+  background: #4070f4;
+  cursor: pointer;
+}
+.form-validation__box.button input:hover {
+  background: #0e4bf1;
+}
+.form-validation__policy {
+  display: flex;
+  align-items: center;
+}
+.form-validation h3 {
+  color: #707070;
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-left: 1rem;
+}
+.form-validation__login h3 {
+  color: #333;
+  width: 100%;
+  text-align: center;
+}
+.form-validation__login h3 a {
+  color: #4070f4;
+  text-decoration: none;
+}
+.form-validation__login h3 a:hover {
+  text-decoration: underline;
+}
+
 /*# sourceMappingURL=style.css.map */
