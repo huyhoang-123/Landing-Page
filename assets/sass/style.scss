@@ -490,7 +490,12 @@ header {
 //Login-page
 .form-validation {
   position: absolute;
-  max-width: 50rem;
+  display: flex;
+  flex-direction: row;
+  column-gap: 2rem;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 100rem;
   width: 100%;
   background: #fff;
   padding: 4rem;
@@ -499,6 +504,20 @@ header {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  .cover-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    z-index: 100;
+      transition: all 1s ease;
+  transform-origin: right;
+  transform-style: preserve-3d;
+    img{
+      height: 100%;
+    }
+  }
   h2 {
     position: relative;
     font-size: 2.2rem;
@@ -575,4 +594,7 @@ header {
       }
     }
   }
+}
+.active{
+  transform: rotateY(-180deg);
 }
