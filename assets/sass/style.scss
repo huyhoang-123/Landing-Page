@@ -378,7 +378,7 @@ header {
 .testimonial {
   text-align: center;
   margin: 10rem auto;
-  .QuoteIconWhite {
+  .quoteIconWhite {
     display: none;
   }
   &-card {
@@ -412,10 +412,10 @@ header {
     &:hover {
       background-color: #4f9cf9;
       color: white !important;
-      .QuoteIconWhite {
+      .quoteIconWhite {
         display: block !important;
       }
-      .QuoteIcon {
+      .quoteIcon {
         display: none;
       }
     }
@@ -456,7 +456,6 @@ header {
     &--item {
       max-width: 20%;
       flex: 0 0 auto;
-      padding: 2rem;
       @media (max-width: 768px) {
         max-width: 100%;
         padding-left: 0;
@@ -468,9 +467,7 @@ header {
       margin-bottom: 1rem;
     }
   }
-  &__link,
-  &__Document,
-  &__social-link {
+  &__Document{
     color: white;
     font-size: 1.8rem;
     font-weight: 400;
