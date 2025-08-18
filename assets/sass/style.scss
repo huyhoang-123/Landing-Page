@@ -378,7 +378,7 @@ header {
 .testimonial {
   text-align: center;
   margin: 10rem auto;
-  .quoteIconWhite {
+  .quote-icon--White {
     display: none;
   }
   &-card {
@@ -412,10 +412,10 @@ header {
     &:hover {
       background-color: #4f9cf9;
       color: white !important;
-      .quoteIconWhite {
+      .quote-icon--White {
         display: block !important;
       }
-      .quoteIcon {
+      .quote-icon {
         display: none;
       }
     }
@@ -467,7 +467,7 @@ header {
       margin-bottom: 1rem;
     }
   }
-  &__Document{
+  &__document{
     color: white;
     font-size: 1.8rem;
     font-weight: 400;

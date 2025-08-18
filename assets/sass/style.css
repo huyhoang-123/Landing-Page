@@ -449,7 +449,7 @@ header {
   text-align: center;
   margin: 10rem auto;
 }
-.testimonial .quoteIconWhite {
+.testimonial .quote-icon--White {
   display: none;
 }
 .testimonial-card {
@@ -485,10 +485,10 @@ header {
   background-color: #4f9cf9;
   color: white !important;
 }
-.testimonial-card:hover .quoteIconWhite {
+.testimonial-card:hover .quote-icon--White {
   display: block !important;
 }
-.testimonial-card:hover .quoteIcon {
+.testimonial-card:hover .quote-icon {
   display: none;
 }
 
@@ -545,7 +545,7 @@ header {
   font-weight: 700;
   margin-bottom: 1rem;
 }
-.footer__Document {
+.footer__document {
   color: white;
   font-size: 1.8rem;
   font-weight: 400;
