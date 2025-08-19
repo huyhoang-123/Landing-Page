@@ -2,23 +2,19 @@ const menu = document.querySelector('.cover-img');
 const pageTitle = document.getElementById('pageTitle');
 const formLogin = document.querySelector('.Login-form');
 const formRegister = document.querySelector('.register-form');
+const loginImg = document.querySelector('.login-img');
+const registerImg = document.querySelector('.register-img');
 
 const toggleDisplay = () => {
-    if (window.innerWidth <= 768) {
-        menu.style.display = 'none';   
-        // Kiểm tra pageTitle để hiển thị form tương ứng
-        if (pageTitle.textContent === 'Login') {
-            formLogin.style.display = 'block';
-            formRegister.style.display = 'none';
-        } else if (pageTitle.textContent === 'Register') {
-            formRegister.style.display = 'block';
-            formLogin.style.display = 'none';
-        }
-    } else {
-        menu.style.display = 'block';
-        // Trên desktop, hiển thị cả hai form (hoặc theo logic ban đầu)
-        formLogin.style.display = 'block';
-        formRegister.style.display = 'block';
+    const isMobile = window.innerWidth <= 768;
+    const isLogin = pageTitle.textContent === 'Login';
+    menu.style.display = isMobile ? 'none' : 'block';
+    formLogin.style.display = (isMobile && !isLogin) ? 'none' : 'block';
+    formRegister.style.display = (isMobile && isLogin) ? 'none' : 'block';
+    if (!isMobile) {
+        // Hiển thị hình ảnh tương ứng với trạng thái đăng nhập
+        loginImg.style.display = isLogin ? 'block' : 'none';
+        registerImg.style.display = isLogin ? 'none' : 'block';
     }
 }
 
@@ -40,4 +36,4 @@ const toggleButton = (message) => {
 }
 
 // Gọi toggleDisplay khi trang load để thiết lập trạng thái ban đầu
-toggleDisplay();
+ toggleDisplay()

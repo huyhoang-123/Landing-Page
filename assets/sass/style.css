@@ -566,6 +566,13 @@ header {
   }
 }
 
+.form-validation-page {
+  background: url("/assets/images/background-LoginPage.jpg") no-repeat center/cover;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
 .form-validation {
   position: absolute;
   display: flex;
@@ -575,7 +582,7 @@ header {
   align-items: center;
   max-width: 100rem;
   width: 100%;
-  background: #fff;
+  background: transparent;
   padding: 4rem;
   border-radius: 6px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -594,8 +601,16 @@ header {
   transform-origin: left;
   transform-style: preserve-3d;
 }
+.form-validation .cover-img .login-img,
+.form-validation .cover-img .register-img {
+  height: 100%;
+}
+.form-validation .cover-img .login-img {
+  transform: rotateY(-180deg);
+}
 .form-validation .cover-img img {
   height: 100%;
+  object-fit: cover;
 }
 .form-validation h2 {
   position: relative;
@@ -611,7 +626,7 @@ header {
   height: 3px;
   width: 28px;
   border-radius: 12px;
-  background: #4070f4;
+  background: linear-gradient(45deg, #18A5A7, #BFFFC7);
 }
 .form-validation form {
   margin-top: 3rem;
@@ -639,6 +654,7 @@ header {
 .form-validation__button {
   cursor: pointer;
   width: 100%;
+  background: linear-gradient(45deg, #18A5A7, #BFFFC7);
 }
 .form-validation__button:hover {
   background: #0e4bf1;
@@ -660,7 +676,7 @@ header {
   text-align: center;
 }
 .form-validation__login p a {
-  color: #4070f4;
+  color: darkcyan;
   text-decoration: none;
 }
 .form-validation__login p a:hover {
