@@ -487,7 +487,7 @@ header {
   }
 }
 
-//Login-page
+//Login/Register-page
 .form-validation {
   position: absolute;
   display: flex;
@@ -507,12 +507,12 @@ header {
   .cover-img {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 50%;
     width: 50%;
     height: 100%;
     z-index: 100;
       transition: all 1s ease;
-  transform-origin: right;
+  transform-origin: left;
   transform-style: preserve-3d;
     img{
       height: 100%;
@@ -537,7 +537,7 @@ header {
   form {
     margin-top: 3rem;
   }
-  &__box {
+  &__field-box {
     height: 5rem;
     margin: 2rem 0;
     input {
@@ -557,31 +557,27 @@ header {
         border-color: #4070f4;
       }
     }
-    &.button {
-      input {
-        color: #fff;
-        letter-spacing: 1px;
-        border: none;
-        background: #4070f4;
+  }
+  &__button {
         cursor: pointer;
+        width: 100%;
         &:hover {
           background: #0e4bf1;
         }
-      }
     }
-  }
   &__policy {
     display: flex;
     align-items: center;
+    column-gap: 0.5rem;
+    margin-bottom: 1rem;
   }
-  h3 {
+  p {
     color: #707070;
     font-size: 1.4rem;
     font-weight: 500;
-    margin-left: 1rem;
   }
   &__login {
-    h3 {
+    p {
       color: #333;
       width: 100%;
       text-align: center;
@@ -593,6 +589,11 @@ header {
         }
       }
     }
+  }
+  @media (max-width: 768px) {
+   .register-form,.Login-form {
+    width: 100%;
+   }
   }
 }
 .active{
