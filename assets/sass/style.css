@@ -1,133 +1,3 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 62.5%;
-}
-@media (max-width <= 768px) {
-  html {
-    font-size: 56.25%;
-  }
-  html *::after {
-    display: none !important;
-  }
-}
-@media (max-width: 320px) {
-  html {
-    font-size: 45%;
-  }
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-button {
-  font-size: 1.8rem;
-  padding: 1rem 2rem;
-  background-color: #4f9cf9;
-  color: white;
-  border: none;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  margin-bottom: 3rem;
-}
-
-.container {
-  margin: 0 3.2rem;
-  position: relative;
-}
-@media (1152px <= width < 1440px) {
-  .container {
-    position: unset;
-  }
-}
-@media (768px < width <= 1152px) {
-  .container {
-    position: relative;
-    overflow: hidden;
-  }
-}
-@media (max-width <= 768px) {
-  .container {
-    padding: 0;
-    margin: 0 2rem;
-  }
-}
-@media (max-width: 320px) {
-  .container {
-    margin: 0 1.6rem;
-    overflow: hidden;
-  }
-}
-
-.flex-grid-item {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  align-items: center;
-  padding: 5rem 0;
-}
-@media (max-width: 768px) {
-  .flex-grid-item {
-    flex-direction: column;
-    text-align: center;
-    padding: 3rem 0;
-    padding: 3rem 0;
-  }
-}
-
-.layout {
-  max-width: 50%;
-  flex: 0 0 auto;
-}
-@media (max-width: 768px) {
-  .layout {
-    max-width: 100%;
-  }
-}
-
-.carousel-item {
-  max-width: 30%;
-  justify-content: space-between;
-  flex: 0 0 auto;
-}
-@media (max-width: 768px) {
-  .carousel-item {
-    max-width: 100%;
-  }
-}
-
-.primary__title {
-  font-size: 6.4rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-@media (max-width <= 768px) {
-  .primary__title {
-    font-size: 4rem;
-  }
-}
-@media (max-width: 320px) {
-  .primary__title {
-    font-size: 3.6rem;
-  }
-}
-
-.description {
-  font-size: 1.8rem;
-  font-weight: 300;
-  margin-bottom: 3rem;
-}
-
 header {
   background: url("/assets/images/Hero-section.png") no-repeat center/cover;
 }
@@ -690,6 +560,136 @@ header {
 
 .active {
   transform: rotateY(-180deg);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 62.5%;
+}
+@media (max-width <= 768px) {
+  html {
+    font-size: 56.25%;
+  }
+  html *::after {
+    display: none !important;
+  }
+}
+@media (max-width: 320px) {
+  html {
+    font-size: 45%;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  font-size: 1.8rem;
+  padding: 1rem 2rem;
+  background-color: #4f9cf9;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-bottom: 3rem;
+}
+
+.container {
+  margin: 0 3.2rem;
+  position: relative;
+}
+@media (1152px <= width < 1440px) {
+  .container {
+    position: unset;
+  }
+}
+@media (768px < width <= 1152px) {
+  .container {
+    position: relative;
+    overflow: hidden;
+  }
+}
+@media (max-width <= 768px) {
+  .container {
+    padding: 0;
+    margin: 0 2rem;
+  }
+}
+@media (max-width: 320px) {
+  .container {
+    margin: 0 1.6rem;
+    overflow: hidden;
+  }
+}
+
+.flex-grid-item {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  padding: 5rem 0;
+}
+@media (max-width: 768px) {
+  .flex-grid-item {
+    flex-direction: column;
+    text-align: center;
+    padding: 3rem 0;
+    padding: 3rem 0;
+  }
+}
+
+.layout {
+  max-width: 50%;
+  flex: 0 0 auto;
+}
+@media (max-width: 768px) {
+  .layout {
+    max-width: 100%;
+  }
+}
+
+.carousel-item {
+  max-width: 30%;
+  justify-content: space-between;
+  flex: 0 0 auto;
+}
+@media (max-width: 768px) {
+  .carousel-item {
+    max-width: 100%;
+  }
+}
+
+.primary__title {
+  font-size: 6.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+@media (max-width <= 768px) {
+  .primary__title {
+    font-size: 4rem;
+  }
+}
+@media (max-width: 320px) {
+  .primary__title {
+    font-size: 3.6rem;
+  }
+}
+
+.description {
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin-bottom: 3rem;
 }
 
 /*# sourceMappingURL=style.css.map */
