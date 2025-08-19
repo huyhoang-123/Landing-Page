@@ -1,18 +1,18 @@
-const menu = document.querySelector('.cover-img');
-const pageTitle = document.getElementById('pageTitle');
-const formLogin = document.querySelector('.Login-form');
+const coverImg = document.querySelector('.cover-img');
+const pageTitle = document.getElementById('page-title');
+const formLogin = document.querySelector('.login-form');
 const formRegister = document.querySelector('.register-form');
 const loginImg = document.querySelector('.login-img');
 const registerImg = document.querySelector('.register-img');
-
+const registerForm = document.forms['register'];
+const loginForm = document.forms['login'];
 const toggleDisplay = () => {
     const isMobile = window.innerWidth <= 768;
     const isLogin = pageTitle.textContent === 'Login';
-    menu.style.display = isMobile ? 'none' : 'block';
+    coverImg.style.display = isMobile ? 'none' : 'block';
     formLogin.style.display = (isMobile && !isLogin) ? 'none' : 'block';
     formRegister.style.display = (isMobile && isLogin) ? 'none' : 'block';
     if (!isMobile) {
-        // Hiển thị hình ảnh tương ứng với trạng thái đăng nhập
         loginImg.style.display = isLogin ? 'block' : 'none';
         registerImg.style.display = isLogin ? 'none' : 'block';
     }
@@ -23,17 +23,42 @@ const navigate = (url) => {
     window.location.href = url;
 };
 
-const toggleButton = (message) => {
-    if (message === 'Login') {
+const getScreenMode = (screen) => {
+    if (screen === 'Login') {
         pageTitle.textContent = 'Login';
     }
-    else if (message === 'Register') {
+    else if (screen === 'Register') {
         pageTitle.textContent = 'Register';
     }
-    menu.classList.toggle('active');
-    // Gọi toggleDisplay để cập nhật hiển thị form
+    coverImg.classList.toggle('active');
     toggleDisplay();
 }
 
-// Gọi toggleDisplay khi trang load để thiết lập trạng thái ban đầu
  toggleDisplay()
+
+
+ const validator=()=>{
+if(validateEmail() && validateAddress() && validatePhoneNumber() && validatePw() && validateConfirmPw()){
+    alert('Form is valid');
+    return true;
+ }
+
+}
+ 
+ const validateEmail =()=>{
+
+ }
+  const validateAddress =()=>{
+    
+ }
+  const validatePhoneNumber =()=>{
+    
+ }
+  const validatePw =()=>{
+    
+ }
+  const validateConfirmPw =()=>{
+    
+ }
+
+//  registerForm.addEventListener('submit', validator);

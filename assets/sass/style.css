@@ -436,6 +436,12 @@ header {
   }
 }
 
+label {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #333;
+}
+
 .form-validation-page {
   background: url("/assets/images/background-LoginPage.jpg") no-repeat center/cover;
   height: 100vh;
@@ -446,7 +452,6 @@ header {
 .form-validation {
   position: absolute;
   display: flex;
-  flex-direction: row;
   column-gap: 2rem;
   justify-content: space-around;
   align-items: center;
@@ -478,17 +483,13 @@ header {
 .form-validation .cover-img .login-img {
   transform: rotateY(-180deg);
 }
-.form-validation .cover-img img {
-  height: 100%;
-  object-fit: cover;
-}
-.form-validation h2 {
+.form-validation .form-title {
   position: relative;
   font-size: 2.2rem;
   font-weight: 600;
   color: #333;
 }
-.form-validation h2::before {
+.form-validation .form-title::before {
   content: "";
   position: absolute;
   left: 0;
@@ -496,20 +497,20 @@ header {
   height: 3px;
   width: 28px;
   border-radius: 12px;
-  background: linear-gradient(45deg, #18A5A7, #BFFFC7);
+  background: linear-gradient(45deg, #18a5a7, #bfffc7);
 }
 .form-validation form {
   margin-top: 3rem;
 }
 .form-validation__field-box {
-  height: 5rem;
-  margin: 2rem 0;
+  height: 100%;
+  margin: 0 0 3rem 0;
 }
-.form-validation__field-box input {
+.form-validation__input {
   height: 100%;
   width: 100%;
   outline: none;
-  padding: 0 1.5rem;
+  padding: 1.5rem;
   font-size: 1.7rem;
   font-weight: 400;
   color: #333;
@@ -518,42 +519,33 @@ header {
   border-radius: 6px;
   transition: all 0.3s ease;
 }
-.form-validation__field-box input:focus, .form-validation__field-box input:valid {
+.form-validation__input:focus, .form-validation__input:valid {
   border-color: #4070f4;
 }
 .form-validation__button {
   cursor: pointer;
   width: 100%;
-  background: linear-gradient(45deg, #18A5A7, #BFFFC7);
+  background: linear-gradient(45deg, #18a5a7, #bfffc7);
 }
 .form-validation__button:hover {
   background: #0e4bf1;
 }
-.form-validation__policy {
-  display: flex;
-  align-items: center;
-  column-gap: 0.5rem;
-  margin-bottom: 1rem;
-}
-.form-validation p {
-  color: #707070;
+.form-validation__suggestion {
   font-size: 1.4rem;
-  font-weight: 500;
-}
-.form-validation__login p {
   color: #333;
   width: 100%;
   text-align: center;
 }
-.form-validation__login p a {
+.form-validation__suggestion--link {
   color: darkcyan;
   text-decoration: none;
 }
-.form-validation__login p a:hover {
+.form-validation__suggestion--link:hover {
   text-decoration: underline;
 }
 @media (max-width: 768px) {
-  .form-validation .register-form, .form-validation .Login-form {
+  .form-validation .register-form,
+  .form-validation .Login-form {
     width: 100%;
   }
 }
@@ -591,7 +583,8 @@ html {
 
 img {
   max-width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
 }
 
 button {
