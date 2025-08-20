@@ -1,36 +1,36 @@
-const coverImg = document.querySelector('.cover-img');
-const pageTitle = document.getElementById('page-title');
-const formLogin = document.querySelector('.login-form');
-const formRegister = document.querySelector('.register-form');
-const loginImg = document.querySelector('.login-img');
-const registerImg = document.querySelector('.register-img');
-
+const elements = {
+coverImg : document.querySelector('.cover-img'),
+ pageTitle : document.getElementById('page-title'),
+ formLogin : document.querySelector('.login-form'),
+ formRegister : document.querySelector('.register-form'),
+ loginImg : document.querySelector('.login-img'),
+ registerImg : document.querySelector('.register-img'),
+};
 
 const handleViewChange = () => {
     const isMobile = window.innerWidth <= 768;
-    const isLogin = pageTitle.textContent === 'Login';
-    coverImg.style.display = isMobile ? 'none' : 'block';
-    formLogin.style.display = (isMobile && !isLogin) ? 'none' : 'block';
-    formRegister.style.display = (isMobile && isLogin) ? 'none' : 'block';
+    const isLogin = elements.pageTitle.textContent === 'Login';
+
+    elements.coverImg.style.display = isMobile ? 'none' : 'block';
+    elements.formLogin.style.display = (isMobile && !isLogin) ? 'none' : 'block';
+    elements.formRegister.style.display = (isMobile && isLogin) ? 'none' : 'block';
+
     if (!isMobile) {
-        loginImg.style.display = isLogin ? 'block' : 'none';
-        registerImg.style.display = isLogin ? 'none' : 'block';
+        elements.loginImg.style.display = isLogin ? 'block' : 'none';
+        elements.registerImg.style.display = isLogin ? 'none' : 'block';
     }
 }
 
 window.addEventListener("resize", handleViewChange);
 const navigate = (url) => {
+
     window.location.href = url;
 };
 
+
 const getScreenMode = (screen) => {
-    if (screen === 'Login') {
-        pageTitle.textContent = 'Login';
-    }
-    else if (screen === 'Register') {
-        pageTitle.textContent = 'Register';
-    }
-    coverImg.classList.toggle('active');
+    elements.pageTitle.textContent = screen;
+    elements.coverImg.classList.toggle('active');
     handleViewChange();
 }
 
@@ -41,29 +41,31 @@ const validator = (options) => {
 
     const registerForm = document.forms[options.form];
 
-
-    const validate = (inputElement, errorElement, rule) => {
-        if (inputElement) {
+    if (!registerForm) {
+        throw new Error(`Form with name ${options.form} not found`);
+    }
+    const validate = (input, error, rule) => {
+        if (input) {
             // add event listenser for input and blur events
-            inputElement.onblur = () => {
-                const errorMsg = rule.test(inputElement.value);
+            input.onblur = () => {
+                const errorMsg = rule.test(input.value);
                 if (errorMsg) {
-                    errorElement.textContent = errorMsg;
-                    inputElement.classList.add('error');
+                    error.textContent = errorMsg;
+                    input.classList.add('error');
                 } else {
-                    errorElement.textContent = '';
-                    inputElement.classList.remove('error');
+                    error.textContent = '';
+                    input.classList.remove('error');
 
                 }
 
                 // Add an input event listener to clear the error message when the user types
-                inputElement.oninput = () => {
+                input.oninput = () => {
                     if (errorMsg) {
-                        errorElement.textContent = '';
-                        inputElement.classList.remove('error');
+                        error.textContent = '';
+                        input.classList.remove('error');
                     } else {
-                        errorElement.textContent = '';
-                        inputElement.classList.remove('error');
+                        error.textContent = '';
+                        input.classList.remove('error');
                     }
                 }
                 return !errorMsg;
@@ -80,7 +82,7 @@ const validator = (options) => {
         validate(inputElement, errorElement, rule);
 
 
-    })
+    });
     registerForm.onsubmit = (e) => {
         e.preventDefault();
         let isValid = true;
