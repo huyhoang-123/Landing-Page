@@ -6,7 +6,7 @@ const loginImg = document.querySelector('.login-img');
 const registerImg = document.querySelector('.register-img');
 const registerForm = document.forms['register'];
 const loginForm = document.forms['login'];
-const toggleDisplay = () => {
+const handleViewChange = () => {
     const isMobile = window.innerWidth <= 768;
     const isLogin = pageTitle.textContent === 'Login';
     coverImg.style.display = isMobile ? 'none' : 'block';
@@ -18,7 +18,7 @@ const toggleDisplay = () => {
     }
 }
 
-window.addEventListener("resize", toggleDisplay);
+window.addEventListener("resize", handleViewChange);
 const navigate = (url) => {
     window.location.href = url;
 };
@@ -34,31 +34,6 @@ const getScreenMode = (screen) => {
     toggleDisplay();
 }
 
- toggleDisplay()
+ handleViewChange()
 
 
- const validator=()=>{
-if(validateEmail() && validateAddress() && validatePhoneNumber() && validatePw() && validateConfirmPw()){
-    alert('Form is valid');
-    return true;
- }
-
-}
- 
- const validateEmail =()=>{
-
- }
-  const validateAddress =()=>{
-    
- }
-  const validatePhoneNumber =()=>{
-    
- }
-  const validatePw =()=>{
-    
- }
-  const validateConfirmPw =()=>{
-    
- }
-
-//  registerForm.addEventListener('submit', validator);
