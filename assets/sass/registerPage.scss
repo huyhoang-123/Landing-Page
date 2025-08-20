@@ -28,8 +28,11 @@ label {
     left: 50%;
     transform: translate(-50%, -50%);
     &--layout {
+        @media (min-width: 768px) {
         max-width: 45%;
         width: 100%;
+        }
+       
     }
     .cover-img {
         position: absolute;

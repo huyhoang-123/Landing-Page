@@ -465,9 +465,11 @@ label {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.form-validation--layout {
-  max-width: 45%;
-  width: 100%;
+@media (min-width: 768px) {
+  .form-validation--layout {
+    max-width: 45%;
+    width: 100%;
+  }
 }
 .form-validation .cover-img {
   position: absolute;

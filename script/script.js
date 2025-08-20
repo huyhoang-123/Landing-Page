@@ -7,7 +7,7 @@ const registerImg = document.querySelector('.register-img');
 
 
 const handleViewChange = () => {
-    const isMobile = window.innerWidth <= 1150;
+    const isMobile = window.innerWidth <= 768;
     const isLogin = pageTitle.textContent === 'Login';
     coverImg.style.display = isMobile ? 'none' : 'block';
     formLogin.style.display = (isMobile && !isLogin) ? 'none' : 'block';
