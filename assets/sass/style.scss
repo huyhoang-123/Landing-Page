@@ -1,7 +1,7 @@
 @use "_variable&_mixins.scss" as *;
-@import 'landingPage.scss';
-@import "registerPage.scss";
-
+@use 'landingPage.scss' ;
+@use "registerPage.scss" ;
+ 
 
 * {
   box-sizing: border-box;
