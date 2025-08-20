@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../assets/images/LogoIcon.png" />
+    <link rel="stylesheet" href="/assets/sass/style.css" />
+    <title id="page-title">Register</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="form-validation-page">
+    <div class="form-validation">
+      <div class="cover-img">
+        <div class="login-img">
+          <img src="/assets/images/LoginImg.jpg" alt="cover-img" />
+        </div>
+        <div class="register-img">
+          <img src="/assets/images/RegisImg.jpg" alt="cover-img" />
+        </div>
+      </div>
+      <div class="register-form">
+        <h2 class="form-title">Registration</h2>
+        <form action="#" name="register">
+          <div class="form-validation__field-box">
+            <label for="fullname">Your Name</label>
+            <input
+            class="form-validation__input"
+              type="text"
+              name="fullname"
+              placeholder="Enter your name"
+              required
+            />
+            <p class="form-validation__error-msg"></p>
+          </div>
+          <div class="form-validation__field-box">
+            <label for="email">Email</label>
+            <input
+             class="form-validation__input"
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+            <p class="form-validation__error-msg"></p>
+          </div>
+          <div class="form-validation__field-box">
+            <label for="address">Address</label>
+            <input
+             class="form-validation__input"
+              type="text"
+              name="address"
+              placeholder="Enter Address"
+              required
+            />
+            <p class="form-validation__error-msg"></p>
+          </div>
+          <div class="form-validation__field-box">
+            <label for="phone-number">Phone Numer</label>
+            <input
+             class="form-validation__input"
+              type="tel"
+              name="phone-number"
+              placeholder="Enter Phone Number"
+              required
+            />
+            <p class="form-validation__error-msg"></p>
+          </div>
+          <div class="form-validation__field-box">
+            <label for="password">Password</label>
+            <input
+             class="form-validation__input"
+              type="password"
+              name="password"
+              placeholder="Create password"
+              required
+            />
+            <p class="form-validation__error-msg"></p>
+          </div>
+          <div class="form-validation__field-box">
+            <label for="confirm-password">Confirm Password</label>
+            <input
+             class="form-validation__input"
+              type="password"
+              name="confirm-password"
+              placeholder="Confirm password"
+              required
+            />
+            <p class="form-validation__error-msg"></p>
+          </div>
+          <button class="form-validation__button" type="submit">
+            Register Now
+          </button>
+          <div >
+            <p class="form-validation__suggestion">
+              Already have an account?
+              <a href="#" onclick="getScreenMode('Login')" class="form-validation__suggestion--link">Login now</a>
+            </p>
+          </div>
+        </form>
+      </div>
+      <div class="login-form">
+        <h2 class="form-title">Login</h2>
+        <form action="#" name="login">
+          <div class="form-validation__field-box">
+            <label for="email">Email</label>
+            <input
+             class="form-validation__input"
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+          <div class="form-validation__field-box">
+            <label for="password">Password</label>
+            <input
+             class="form-validation__input"
+              type="password"
+              name="password"
+              placeholder="Enter password"
+              required
+            />
+          </div>
+          <button class="form-validation__button" type="submit">
+            Login Now
+          </button>
+          <div>
+            <p class="form-validation__suggestion">
+              Don't have an account?
+              <a href="#" onclick="getScreenMode('Register')" class="form-validation__suggestion--link">Register now</a>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="/script/script.js"></script>
+  </body>
+</html>
