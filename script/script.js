@@ -1,11 +1,12 @@
 const elements = {
-coverImg : document.querySelector('.cover-img'),
- pageTitle : document.getElementById('page-title'),
- formLogin : document.querySelector('.login-form'),
- formRegister : document.querySelector('.register-form'),
- loginImg : document.querySelector('.login-img'),
- registerImg : document.querySelector('.register-img'),
+    coverImg: document.querySelector('.cover-img'),
+    pageTitle: document.getElementById('page-title'),
+    formLogin: document.querySelector('.login-form'),
+    formRegister: document.querySelector('.register-form'),
+    loginImg: document.querySelector('.login-img'),
+    registerImg: document.querySelector('.register-img'),
 };
+
 
 const handleViewChange = () => {
     const isMobile = window.innerWidth <= 768;
@@ -36,134 +37,184 @@ const getScreenMode = (screen) => {
 
 handleViewChange()
 
-// Validator function to handle form validation
-const validator = (options) => {
-
-    const registerForm = document.forms[options.form];
-
-    if (!registerForm) {
-        throw new Error(`Form with name ${options.form} not found`);
-    }
-    const validate = (input, error, rule) => {
-        if (input) {
-            // add event listenser for input and blur events
-            input.onblur = () => {
-                const errorMsg = rule.test(input.value);
-                if (errorMsg) {
-                    error.textContent = errorMsg;
-                    input.classList.add('error');
-                } else {
-                    error.textContent = '';
-                    input.classList.remove('error');
-
-                }
-
-                // Add an input event listener to clear the error message when the user types
-                input.oninput = () => {
-                    if (errorMsg) {
-                        error.textContent = '';
-                        input.classList.remove('error');
-                    } else {
-                        error.textContent = '';
-                        input.classList.remove('error');
-                    }
-                }
-                return !errorMsg;
-            }
-
+const validateConfig = {
+    name: {
+        messages: {
+            required: 'Full name is required'
+        },
+        formats: {
+            required: (value) => value.trim() === ""
         }
-
-    }
-    // Loop through each rule and set up validation
-    options.rules.forEach(rule => {
-        const inputElement = registerForm[rule.selector];
-        const errorElement = inputElement.nextElementSibling;
-
-        validate(inputElement, errorElement, rule);
-
-
-    });
-    registerForm.onsubmit = (e) => {
-        e.preventDefault();
-        let isValid = true;
-        options.rules.forEach(rule => {
-            const inputElement = registerForm[rule.selector];
-            const errorElement = inputElement.nextElementSibling;
-            validate(inputElement, errorElement, rule);
-            const errorMsg = errorElement.textContent;
-            if (errorMsg) {
-                isValid = false; // If any error message exists, set isValid to false
-            }
-
-        });
-        if (isValid) {
-            alert('Form submitted successfully!');
-            resetForm(); // Reset the form if all validations pass
+    },
+    email: {
+        messages: {
+            required: 'Email is required',
+            invalid: 'Invalid email format'
+        },
+        formats: {
+            required: (value) => value.trim() === "",
+            invalid: (value) => value.trim() !== "" && !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)
         }
+    },
+    address: {
+        messages: {
+            required: 'Address is required'
+        },
+        formats: {
+            required: (value) => value.trim() === ''
+        }
+    },
 
+    phone: {
+        messages: {
+            required: 'Phone number is required',
+            invalid: 'Invalid phone number format'
+        },
+        formats: {
+            required: (value) => value.trim() === '',
+            invalid: (value) => value.trim() !== '' && !/(03|05|07|08|09|01[2|6|8|9])+([0-9]{8})\b/.test(value)
+        }
+    },
 
+    password: {
+        messages: {
+            required: 'Password is required',
+            minLength: 'Password must be at least 8 characters',
+            maxLength: 'Password must be less than 20 characters',
+            format: 'Password must contain uppercase, lowercase and number'
+        },
+        formats: {
+            required: (value) => value.trim() === '',
+            minLength: (value) => value.trim() !== '' && value.length < 8,
+            maxLength: (value) => value.trim() !== '' && value.length > 20,
+            format: (value) => value.trim() !== '' && !/^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).+$/.test(value)
+        }
+    },
+
+    confirmPassword: {
+        messages: {
+            required: 'Confirm password is required',
+            notMatch: 'Password does not match'
+        },
+        formats: {
+            required: (value) => value.trim() === '',
+            notMatch: (value, compareValue) => value.trim() !== '' && value != compareValue
+        }
     }
 
 }
 
+const createValidationRule = (fieldType, selector, compareCallback = null) => {
+    const config = validateConfig[fieldType];
+    console.log(Object.entries(validateConfig['password']))
+    if (!config) {
+        throw new Error(`Validation config for '${fieldType}' not found`);
+    }
+
+    return {
+        selector,
+        test: (value) => {
+            // loops format  
+            for (const [formatType, formatFn] of Object.entries(config.formats)) {
+                let isInvalid;
+
+                // Special case cho confirmPassword
+                if (fieldType === 'confirmPassword' && formatType === 'notMatch') {
+                    isInvalid = formatFn(value, compareCallback ? compareCallback() : '');
+                } else {
+                    isInvalid = formatFn(value);
+                }
+
+                if (isInvalid) {
+                    console.log(config.messages[formatType]);
+                    return config.messages[formatType];
+                }
+            }
+            return ''; // No error
+        }
+    };
+
+}
+
+// Validator function to handle form validation
+const validator = (options) => {
+
+    const registerForm = document.forms[options.form];
+    const submitButton = registerForm.querySelector('button[type="submit"]')  || form.querySelector('input[type="submit"]');
+
+    if (!registerForm) {
+        throw new Error(`Form with name ${options.form} not found`);
+    }
+    const validateField = (input, error, rule) => {
+        const errorMsg = rule.test(input.value);
+        error.textContent = errorMsg;
+        input.classList.toggle('error', !!errorMsg);
+        return !errorMsg;
+    };
+
+    const checkFormValidity = () => {
+        const isValid = options.rules.every(rule => {
+            const input = registerForm[rule.selector];
+            if (!input || !input.value.trim()) return false; // Required fields must have value
+            return !rule.test(input.value); // No error message = valid
+        });
+
+        if (submitButton) {
+            submitButton.disabled = !isValid;
+            submitButton.style.opacity = isValid ? '1' : '0.5';
+            submitButton.style.cursor = isValid ? 'pointer' : 'not-allowed';
+        }
+
+        return isValid;
+    };
+    // Loop through each rule and set up validation
+    options.rules.forEach(rule => {
+        const input = registerForm[rule.selector];
+        const error = input?.nextElementSibling;
+        if (input && error) {
+            input.onblur = () => {
+                validateField(input, error, rule);
+                checkFormValidity();
+            }
+            input.oninput = () => {
+                if (input.classList.contains('error')) {
+                    error.textContent = '';
+                    input.classList.remove('error');
+                }
+                checkFormValidity();
+            };
+        }
+    });
+ 
+    
+   
+    checkFormValidity();
+    registerForm.onsubmit = (e) => {
+        e.preventDefault();
+
+        const isValid = options.rules.every(rule => {
+            const input = form[rule.selector];
+            const error = input?.nextElementSibling;
+            return input && error ? validateField(input, error, rule) : true;
+        });
+
+        if (isValid) {
+            alert('Form submitted successfully!');
+            resetForm();
+        } else {
+            form.querySelector('.error')?.focus();
+        }
+    };
+}
 
 
+validator.validateName = (selector) => createValidationRule('name', selector)
+validator.validateEmail = (selector) => createValidationRule('email', selector)
+validator.validateAddress = (selector) => createValidationRule('address', selector)
+validator.validatePhoneNumber = (selector) => createValidationRule('phone', selector)
+validator.validatePassword = (selector) => createValidationRule('password', selector)
+validator.validateConfirmPassword = (selector, checkPw) => createValidationRule('confirmPassword', selector, checkPw)
 
-validator.validateName = (selector) => {
-
-    return {
-        selector: selector,
-        test: (value) => {
-            return value.trim() === '' ? 'Full name is required' : '';
-        }
-    }
-};
-validator.validateEmail = (selector) => {
-    return {
-        selector: selector,
-        test: (value) => {
-            return value.trim() === '' ? 'Email is required' :
-                !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value) ? 'Invalid email format' : '';
-        }
-    }
-};
-validator.validateAddress = (selector) => {
-    return {
-        selector: selector,
-        test: (value) => {
-            return value.trim() === '' ? 'Address is required' : '';
-        }
-    }
-};
-validator.validatePhoneNumber = (selector) => {
-    return {
-        selector: selector,
-        test: (value) => {
-            return value.trim() === '' ? 'Phone number is required' :
-                /(03|05|07|08|09|01[2|6|8|9])+([0-9]{8})\b/.test(value) ? '' : 'Invalid phone number format';
-        }
-    }
-};
-validator.validatePassword = (selector) => {
-    return {
-        selector: selector,
-        test: (value) => {
-            return value.trim() === '' ? 'Password is required' :
-                value.length < 8 ? 'Password must be at least 8 characters' :
-                    value.length > 20 ? 'Password must be less 20 characters' :
-                        /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).+$/.test(value) ? '' : 'Password must contain at least one uppercase letter, one lowercase letter, one number, and one number';
-        }
-    }
-};
-validator.validateConfirmPassword = (selector, callback) => {
-    return {
-        selector: selector,
-        test: (value) => {
-            return value.trim() === '' ? 'Confirm password is required' :
-                value !== callback() ? 'Password does not match' : '';
-        }
-    }
-};
 
 const resetForm = () => {
     const form = document.forms['register'];
@@ -177,3 +228,5 @@ const resetForm = () => {
         input.classList.remove('error');
     });
 }
+
+
