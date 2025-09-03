@@ -19,6 +19,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap"
       rel="stylesheet"
     />
+   
   </head>
   <body class="form-validation-page">
     <div class="form-validation">
@@ -30,7 +31,7 @@
           <img src="/assets/images/RegisImg.jpg" alt="cover-img" />
         </div>
       </div>
-      <div class="register-form">
+      <div class="register-form form-validation--layout ">
         <h2 class="form-title">Registration</h2>
         <form action="#" name="register">
           <div class="form-validation__field-box">
@@ -42,7 +43,7 @@
               placeholder="Enter your name"
               required
             />
-            <p class="form-validation__error-msg"></p>
+            <span class="form-validation__error-msg"></span>
           </div>
           <div class="form-validation__field-box">
             <label for="email">Email</label>
@@ -53,7 +54,7 @@
               placeholder="Enter your email"
               required
             />
-            <p class="form-validation__error-msg"></p>
+            <span class="form-validation__error-msg"></span>
           </div>
           <div class="form-validation__field-box">
             <label for="address">Address</label>
@@ -64,7 +65,7 @@
               placeholder="Enter Address"
               required
             />
-            <p class="form-validation__error-msg"></p>
+            <span class="form-validation__error-msg"></span>
           </div>
           <div class="form-validation__field-box">
             <label for="phone-number">Phone Numer</label>
@@ -75,7 +76,7 @@
               placeholder="Enter Phone Number"
               required
             />
-            <p class="form-validation__error-msg"></p>
+            <span class="form-validation__error-msg"></span>
           </div>
           <div class="form-validation__field-box">
             <label for="password">Password</label>
@@ -86,7 +87,7 @@
               placeholder="Create password"
               required
             />
-            <p class="form-validation__error-msg"></p>
+            <span class="form-validation__error-msg"></span>
           </div>
           <div class="form-validation__field-box">
             <label for="confirm-password">Confirm Password</label>
@@ -97,8 +98,9 @@
               placeholder="Confirm password"
               required
             />
-            <p class="form-validation__error-msg"></p>
+            <span class="form-validation__error-msg"></span>
           </div>
+          <button onclick="resetForm()" class="form-validation__button">Reset</button>
           <button class="form-validation__button" type="submit">
             Register Now
           </button>
@@ -110,7 +112,7 @@
           </div>
         </form>
       </div>
-      <div class="login-form">
+      <div class="login-form  form-validation--layout">
         <h2 class="form-title">Login</h2>
         <form action="#" name="login">
           <div class="form-validation__field-box">
@@ -145,6 +147,6 @@
         </form>
       </div>
     </div>
-    <script src="/script/script.js"></script>
+     <script defer src="/script/register.js"></script>
   </body>
 </html>

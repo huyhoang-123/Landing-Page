@@ -453,7 +453,7 @@ label {
   position: absolute;
   display: flex;
   column-gap: 2rem;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   max-width: 100rem;
   width: 100%;
@@ -464,6 +464,12 @@ label {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+@media (min-width: 768px) {
+  .form-validation--layout {
+    max-width: 45%;
+    width: 100%;
+  }
 }
 .form-validation .cover-img {
   position: absolute;
@@ -504,10 +510,12 @@ label {
 }
 .form-validation__field-box {
   height: 100%;
-  margin: 0 0 3rem 0;
+  margin: 0 0 1rem;
+  max-height: 7.5rem;
 }
 .form-validation__input {
   height: 100%;
+  max-height: 4.5rem;
   width: 100%;
   outline: none;
   padding: 1.5rem;
@@ -543,15 +551,23 @@ label {
 .form-validation__suggestion--link:hover {
   text-decoration: underline;
 }
+.form-validation__error-msg {
+  font-size: 1.5rem;
+  color: red;
+}
 @media (max-width: 768px) {
   .form-validation .register-form,
-  .form-validation .Login-form {
+  .form-validation .login-form {
     width: 100%;
   }
 }
 
 .active {
   transform: rotateY(-180deg);
+}
+
+.error {
+  border: 1px solid red;
 }
 
 * {
