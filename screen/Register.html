@@ -19,6 +19,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap"
       rel="stylesheet"
     />
+   
   </head>
   <body class="form-validation-page">
     <div class="form-validation">
@@ -146,22 +147,6 @@
         </form>
       </div>
     </div>
-    <script src="/script/script.js"></script>
-    <script>
-      validator({
-        form: 'register',
-        rules : [
-          validator.validateName('fullname'),
-          validator.validateEmail('email'),
-          validator.validateAddress('address'),  
-          validator.validatePhoneNumber('phone-number'),
-          validator.validatePassword('password'),
-          validator.validateConfirmPassword('confirm-password',checkPassword = () => {
-            const password = document.querySelector('input[name="password"]').value;
-            return password;
-          })
-        ]
-      })
-    </script>
+     <script defer src="/script/register.js"></script>
   </body>
 </html>
