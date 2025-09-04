@@ -66,24 +66,22 @@
       </nav>
 
       <section class="hero-section container">
-        <div class="hero-section__content layout">
-          <h1 class="primary__title">Get More Done with whitepace</h1>
-          <p class="description">
-            Project management software that enables your teams to collaborate,
-            plan, analyze and manage everyday tasks
-          </p>
-          <button class="hero-section__button">
-            Try Whitespace free
-            <i class="fa-solid fa-arrow-right" style="font-size: small"></i>
-          </button>
+        <div class="hero-section__slider">
+          <img src="/assets/images/img-slider1.png" alt="img-slider1" class="hero-section__slider--img ">
+          <img src="/assets/images/img-slider2.png" alt="img-slider2" class="hero-section__slider--img">
+          <img src="/assets/images/img-slider3.png" alt="img-slider3" class="hero-section__slider--img">
+          <div class="navigate-arrow">
+          <button class="navigate-button navigate-arrow__left" onclick="prevSlider()"><i class="fa-solid fa-chevron-left"></i></button>
+          <button class="navigate-button navigate-arrow__right"onclick="nextSlider()"><i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+          <div class="navigate-dot" >
+            <img class="navigate-dot__button "  src="/assets/images/circle-regular-full.svg" alt="navigate-dot">
+            <img class="navigate-dot__button"  src="/assets/images/circle-regular-full.svg"  alt="navigate-dot">
+            <img class="navigate-dot__button" src="/assets/images/circle-regular-full.svg"  alt="navigate-dot">
+          </div>
+
         </div>
-        <div class="hero-section__image layout">
-          <img
-            src="../assets/images/Image-container.png"
-            alt="Hero Image"
-            class="hero__img"
-          />
-        </div>
+      
       </section>
     </header>
     <main>
@@ -528,6 +526,6 @@
         </section>
         </div>
       </footer>
-      <script src="/script/script.js"></script>
+      <script defer src="/script/script.js"></script>
   </body>
 </html>

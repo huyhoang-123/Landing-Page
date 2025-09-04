@@ -44,7 +44,7 @@ button {
   margin: 0 3.2rem;
   position: relative;
   @media (1152px <= width < 1440px) {
-    position: unset;
+    position: relative;
   }
   @media (768px < width <= 1152px) {
     position: relative;
