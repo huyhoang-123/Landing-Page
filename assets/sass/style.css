@@ -108,28 +108,45 @@ header {
 }
 
 .hero-section {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  align-items: center;
-  padding: 5rem 0;
-  color: #ffffff;
+  position: relative;
+  padding-bottom: 3rem;
 }
-@media (max-width: 768px) {
-  .hero-section {
-    flex-direction: column;
-    text-align: center;
-    padding: 3rem 0;
-    padding: 3rem 0;
-  }
+.hero-section__slider--img {
+  width: 100%;
+  max-height: 500px;
+  border-radius: 50px;
+  display: none;
 }
-@media (max-width: 320px) {
-  .hero-section {
-    padding: 1rem 0;
-  }
+.hero-section .slide-show {
+  display: block;
 }
-.hero-section__content {
-  padding-right: 2rem;
+.hero-section .navigate-arrow .navigate-button {
+  background-color: transparent;
+}
+.hero-section .navigate-arrow__left {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-bottom: 0;
+  transform: translateY(-80%);
+}
+.hero-section .navigate-arrow__right {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-bottom: 0;
+  transform: translateY(-80%);
+}
+.hero-section .navigate-dot {
+  text-align: center;
+  margin-top: -2rem;
+}
+.hero-section .navigate-dot__button {
+  max-width: 2rem;
+  cursor: pointer;
+}
+.hero-section .navigate-dot__button .dot-active {
+  background-color: black;
 }
 
 .feature {
@@ -604,7 +621,7 @@ button {
 }
 @media (1152px <= width < 1440px) {
   .container {
-    position: unset;
+    position: relative;
   }
 }
 @media (768px < width <= 1152px) {

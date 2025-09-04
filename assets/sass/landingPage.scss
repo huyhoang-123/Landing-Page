@@ -87,19 +87,48 @@ header {
   }
 }
 .hero-section {
-  @include flexItem();
-  padding: 5rem 0;
-  color: $color-white;
-  @media (max-width: 768px) {
-    @include gridItem();
-    padding: 3rem 0;
+position: relative;
+padding-bottom: 3rem;
+&__slider--img{
+  width: 100%;
+  max-height: 500px;
+  border-radius: 50px;
+  display: none;
+}
+.slide-show {
+  display: block;
+}
+.navigate-arrow {
+  .navigate-button{
+    background-color: transparent;
   }
-  @media (max-width: 320px) {
-    padding: 1rem 0;
+  &__left{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-bottom: 0;
+    transform: translateY(-80%);
   }
-  &__content {
-    padding-right: 2rem;
+  &__right{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-bottom: 0;
+    transform: translateY(-80%);
   }
+}
+.navigate-dot{
+  text-align: center;
+  margin-top: -2rem;
+  &__button{
+  max-width: 2rem;
+  cursor: pointer;
+  .dot-active{
+    background-color: black;
+  }
+  }
+
+}
 }
 .feature {
   background: url("/assets/images/Work-management.png") no-repeat top/contain;
